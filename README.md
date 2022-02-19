@@ -4,13 +4,13 @@ Everything you need to build free software with Svelte and Headless UI.
 
 ## Highlights
 
-- Minimal opinion for maximum reuse
-- Tailwind CSS with Forms and Typography plugins
-- Prettier with Tailwind automatic class sorting
-- Cssnano stylesheet compression for prod builds
-- Headless UI via [@rgossiaux/svelte-headlessui](https://github.com/rgossiaux/svelte-headlessui)
-- Changesets for automated changelog generation
-- Designed for use creating free software
+- 🎨 Tailwind CSS with Forms and Typography plugins
+- 🧪 Headless UI via [@rgossiaux/svelte-headlessui](https://github.com/rgossiaux/svelte-headlessui)
+- 💄 Prettier with Tailwind automatic class sorting
+- 🚩 Unplugin Icons for access to all [Icônes](https://icones.js.org/) icons
+- ⚡️ Cssnano stylesheet compression for prod builds
+- 📝 Changesets for automated changelog generation
+- 🏗️ Structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
 
 ## Developing
 
