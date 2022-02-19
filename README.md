@@ -12,6 +12,10 @@ Everything you need to build free software with Svelte and Headless UI.
 - 📝 Changesets for automated changelog generation
 - 🏗️ Structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
 
+## Demo
+
+View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to try it out.
+
 ## Developing
 
 Once you've created a project and installed dependencies with `pnpm install`, start a development server:
