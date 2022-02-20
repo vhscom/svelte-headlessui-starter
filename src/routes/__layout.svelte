@@ -18,9 +18,9 @@
 	import { beforeUpdate } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import type { INavItem } from '$models/interfaces/inav-item.interface';
-	import type { IUser } from '$lib/models/interfaces/iuser.interface';
-	import { GlobalNav } from '$components/navigation';
+	import type { INavItem } from '$lib/models/interfaces/nav-item.interface';
+	import type { IUser } from '$lib/models/interfaces/user.interface';
+	import { PageMeta, GlobalNav } from '$components';
 	import '../app.css';
 
 	export let navigationData: INavItem[];
@@ -32,8 +32,9 @@
 			return { ...navItem, current: navItem.href === $page.url.pathname };
 		});
 
-	$: [currentNavItem] = navigation.filter((navItem) => navItem.current);
-	$: [user] = userData;
+	$: currentNavItem = navigation.find((navItem) => navItem.current);
+	$: [firstUser] = userData;
+	$: pageTitle = currentNavItem?.name;
 
 	beforeUpdate(() => {
 		const [firstNavItem] = navigation;
@@ -44,13 +45,14 @@
 	});
 </script>
 
-<GlobalNav {navigation} {user} />
+<PageMeta {pageTitle} />
+<GlobalNav {navigation} user={firstUser} />
 
-{#if currentNavItem}
+{#if pageTitle}
 	<header class="bg-white shadow">
 		<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 			<h1 class="text-3xl font-bold text-gray-900">
-				{currentNavItem.name}
+				{pageTitle}
 			</h1>
 		</div>
 	</header>

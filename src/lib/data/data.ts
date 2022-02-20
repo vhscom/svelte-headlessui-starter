@@ -1,5 +1,6 @@
 import { UserModel } from '$models/classes/user.model';
-import { NavItem } from '$lib/models/classes/navitem.model';
+import { NavItemModel } from '$models/classes/nav-item.model';
+import { SiteModel } from '$models/classes/site.model';
 
 export const userData: UserModel[] = [
 	{
@@ -9,7 +10,14 @@ export const userData: UserModel[] = [
 	}
 ].map((value) => new UserModel().deserialize(value));
 
-export const navigationData: NavItem[] = [
+export const siteData: SiteModel = new SiteModel().deserialize({
+	name: 'SvelteKit Headless UI Starter',
+	description: 'Launch your SvelteKit app using Tailwind and Headless UI.',
+	keywords: ['svelte', 'sveltekit', 'tailwindcss', 'headlessui'],
+	images: [{ url: 'social.png' }]
+});
+
+export const navigationData: NavItemModel[] = [
 	{
 		name: 'Dashboard',
 		href: '/dashboard',
@@ -34,4 +42,4 @@ export const navigationData: NavItem[] = [
 		current: null,
 		weight: 4
 	}
-].map((value) => new NavItem().deserialize(value));
+].map((value) => new NavItemModel().deserialize(value));

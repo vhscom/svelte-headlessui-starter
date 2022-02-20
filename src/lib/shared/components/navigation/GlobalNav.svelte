@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { classes } from '$utils';
-	import type { INavItem } from '$models/interfaces/inav-item.interface';
-	import type { IUser } from '$lib/models/interfaces/iuser.interface';
+	import type { INavItem } from '$lib/models/interfaces/nav-item.interface';
+	import type { IUser } from '$lib/models/interfaces/user.interface';
 	import { userData } from '$data';
 
 	import BellIcon from '~icons/heroicons-outline/bell';

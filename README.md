@@ -12,6 +12,7 @@
 - 📝 Changesets for automated changelog generation
 - 🏗️ Project structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
 - 🚚 Dynamic global navigation driven by API calls
+- 📈 Basic SEO with large social sharing cards
 
 ## Demo
 
@@ -19,7 +20,7 @@ View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to try i
 
 ## Screenshot
 
-![Browser window](static/screenshot.png)
+![Browser window](static/screenshot.webp)
 
 ## Developing
 

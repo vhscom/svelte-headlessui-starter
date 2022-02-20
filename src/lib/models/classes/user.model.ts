@@ -1,5 +1,5 @@
-import type { IUser } from '$models/interfaces/iuser.interface';
-import type { IDeserializable } from '$models/interfaces/ideserializable.interface';
+import type { IUser } from '$models/interfaces/user.interface';
+import type { IDeserializable } from '$models/interfaces/deserializable.interface';
 
 import { Md5 } from 'ts-md5';
 

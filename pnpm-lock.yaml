@@ -22,6 +22,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.1.7
   svelte: ^3.46.4
   svelte-check: ^2.4.5
+  svelte-meta-tags: ^2.3.0
   svelte-preprocess: ^4.10.3
   tailwindcss: ^3.0.23
   ts-md5: ^1.2.11
@@ -52,6 +53,7 @@ devDependencies:
   prettier-plugin-tailwindcss: 0.1.7_prettier@2.5.1
   svelte: 3.46.4
   svelte-check: 2.4.5_06670835898ebc1da7d1c97a8716c619
+  svelte-meta-tags: 2.3.0_svelte@3.46.4+typescript@4.5.5
   svelte-preprocess: 4.10.3_e1bf482d98c0166a5d6196b4af1639d5
   tailwindcss: 3.0.23_autoprefixer@10.4.2
   ts-md5: 1.2.11
@@ -3518,6 +3520,14 @@ packages:
       rimraf: 2.7.1
     dev: true
 
+  /schema-dts/1.0.0_typescript@4.5.5:
+    resolution: {integrity: sha512-9t8gnY3RW2CbpuvA0pIpcaHFXkJTeNnWR4uaWI+PiYSfpuEeMw+2Q0Gac6YTnQb1B8TR6/+G71gQWuSE7dq6Zw==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 4.5.5
+    dev: true
+
   /semver-diff/3.1.1:
     resolution: {integrity: sha512-GX0Ix/CJcHyB8c4ykpHGIAvLyOwOobtM/8d+TQkAd81/bEjgPHrfba41Vpesr7jX/t8Uh+R3EX9eAS5be+jQYg==}
     engines: {node: '>=8'}
@@ -3788,6 +3798,17 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.46.4
+    dev: true
+
+  /svelte-meta-tags/2.3.0_svelte@3.46.4+typescript@4.5.5:
+    resolution: {integrity: sha512-41sk5683xMxQ4yD5oisrFQwAY5wIYu5eFxLicLOYhejujMqD7vxNpNf4QUYyE3HZl/g5g50LnBltdae5AbSKgA==}
+    peerDependencies:
+      svelte: ^3.39.0
+    dependencies:
+      schema-dts: 1.0.0_typescript@4.5.5
+      svelte: 3.46.4
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /svelte-preprocess/4.10.3_e1bf482d98c0166a5d6196b4af1639d5:

@@ -1,9 +1,5 @@
-<svelte:head>
-	<title>Dashboard</title>
-</svelte:head>
-
 <h2>Welcome to SvelteKit Headless UI Starter</h2>
-<p>Jumpstart your SvelteKit app using Tailwind and Headless UI.</p>
+<p>Launch your SvelteKit app using Tailwind and Headless UI.</p>
 <ul>
 	<li>
 		Visit <a href="https://codeberg.org/vhs/sveltekit-headlessui-starter">codeberg.org</a> to view the
