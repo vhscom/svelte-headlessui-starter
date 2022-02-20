@@ -16,8 +16,6 @@
 
 <script lang="ts">
 	import { beforeUpdate } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import { quintIn } from 'svelte/easing';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import type { INavItem } from '$models/interfaces/inav-item.interface';
@@ -58,7 +56,7 @@
 	</header>
 {/if}
 
-<main in:fade={{ easing: quintIn }}>
+<main>
 	<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 prose">
 		<slot />
 	</div>
