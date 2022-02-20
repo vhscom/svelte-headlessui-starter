@@ -1,6 +1,6 @@
 # SvelteKit Headless UI Starter
 
-Everything you need to build free software with Svelte and Headless UI.
+🚀 Launch your SvelteKit app with Tailwind and Headless UI.
 
 ## Highlights
 
@@ -10,7 +10,8 @@ Everything you need to build free software with Svelte and Headless UI.
 - 🚩 Unplugin Icons for access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ Cssnano stylesheet compression for prod builds
 - 📝 Changesets for automated changelog generation
-- 🏗️ Structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
+- 🏗️ Project structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
+- 🚚 Dynamic global navigation driven by API calls
 
 ## Demo
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { classes } from '$utils';
 	import type { INavItem } from '$models/interfaces/inav-item.interface';
+	import type { IUser } from '$lib/models/interfaces/iuser.interface';
 	import { userData } from '$data';
 
 	import BellIcon from '~icons/heroicons-outline/bell';
@@ -19,9 +20,10 @@
 	} from '@rgossiaux/svelte-headlessui';
 
 	export let navigation: INavItem[];
+	export let user: IUser;
 
-	const [firstUser] = userData;
-	const gravitarUri = `https://www.gravatar.com/avatar/${firstUser.getEmailMd5Hash()}?s=64`;
+	const currentUser = userData.find((datum) => datum.id === user.id);
+	const gravitarUri = `https://www.gravatar.com/avatar/${currentUser.getEmailMd5Hash()}?s=64`;
 </script>
 
 <Disclosure class="bg-gray-800" as="nav" let:open>
