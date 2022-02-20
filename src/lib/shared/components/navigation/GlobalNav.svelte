@@ -108,41 +108,29 @@
 							class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
 						>
 							<!-- Active: "bg-gray-100", Not Active: "" -->
-							<MenuItem let:active>
-								<a
-									href="/account/profile"
-									sveltekit:prefetch
-									class={classes(
-										active ? 'bg-gray-100' : '',
-										'block px-4 py-2 text-sm text-gray-700'
-									)}
-								>
-									Your Profile
-								</a>
+							<MenuItem
+								href="/account/profile"
+								sveltekit:prefetch
+								class={({ active }) =>
+									classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+							>
+								Your Profile
 							</MenuItem>
-							<MenuItem let:active>
-								<a
-									href="/account/settings"
-									sveltekit:prefetch
-									class={classes(
-										active ? 'bg-gray-100' : '',
-										'block px-4 py-2 text-sm text-gray-700'
-									)}
-								>
-									Settings
-								</a>
+							<MenuItem
+								href="/account/settings"
+								sveltekit:prefetch
+								class={({ active }) =>
+									classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+							>
+								Settings
 							</MenuItem>
-							<MenuItem let:active>
-								<a
-									href="/account/signout"
-									sveltekit:prefetch
-									class={classes(
-										active ? 'bg-gray-100' : '',
-										'block px-4 py-2 text-sm text-gray-700'
-									)}
-								>
-									Sign out
-								</a>
+							<MenuItem
+								href="/account/signout"
+								sveltekit:prefetch
+								class={({ active }) =>
+									classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+							>
+								Sign out
 							</MenuItem>
 						</MenuItems>
 					</Transition>
