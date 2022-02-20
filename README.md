@@ -17,6 +17,10 @@
 
 View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to try it out.
 
+## Screenshot
+
+![Browser window](static/screenshot.png)
+
 ## Developing
 
 Once you've created a project and installed dependencies with `pnpm install`, start a development server:
