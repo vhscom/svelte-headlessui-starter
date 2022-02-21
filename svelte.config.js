@@ -19,6 +19,7 @@ const config = {
 			resolve: {
 				alias: {
 					$components: resolve('.', './src/lib/shared/components'),
+					$layouts: resolve('.', './src/lib/shared/layouts'),
 					$models: resolve('.', './src/lib/models'),
 					$data: resolve('.', './src/lib/data'),
 					$utils: resolve('.', './src/lib/utils')
