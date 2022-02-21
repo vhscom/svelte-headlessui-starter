@@ -1,6 +1,6 @@
 # SvelteKit Headless UI Starter
 
-🚀 Launch your SvelteKit app with Tailwind and Headless UI.
+Launch your SvelteKit app with Tailwind and Headless UI.
 
 ## Highlights
 
@@ -10,7 +10,6 @@
 - 🚩 Unplugin Icons for access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ Cssnano stylesheet compression for prod builds
 - 📝 Changesets for automated changelog generation
-- 🏗️ Project structure modeled from [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter)
 - 🚚 Dynamic global navigation driven by API calls
 - 📈 Basic SEO with large social sharing cards
 
@@ -21,6 +20,41 @@ View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to try i
 ## Screenshot
 
 ![Browser window](static/screenshot.webp)
+
+## Structure
+
+Inspired by the [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter) app:
+
+```
+├── src
+│   ├── environments
+│   ├── hooks
+│   ├── lib
+│   │   ├── core
+│   │   │   └── services
+│   │   ├── data
+│   │   ├── models
+│   │   │   ├── classes
+│   │   │   ├── enums
+│   │   │   ├── interfaces
+│   │   │   └── types
+│   │   ├── shared
+│   │   │   ├── components
+│   │   │   │   ├── elements
+│   │   │   │   ├── meta
+│   │   │   │   ├── sections
+│   │   │   │   └── ui
+│   │   │   └── layouts
+│   │   └── utils
+│   ├── routes
+│   │   ├── account
+│   │   └── api
+│   ├── stores
+│   └── styles
+└── static
+```
+
+Folders created on an as-needed basis.
 
 ## Developing
 
