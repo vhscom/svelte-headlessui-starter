@@ -17,7 +17,7 @@
 
 {#if pageTitle}
 	<header class="bg-white shadow">
-		<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
 			<h1 class="text-3xl font-bold text-gray-900">
 				{pageTitle}
 			</h1>
@@ -26,7 +26,7 @@
 {/if}
 
 <main>
-	<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 prose">
+	<div class="prose mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
 		<slot />
 	</div>
 </main>
