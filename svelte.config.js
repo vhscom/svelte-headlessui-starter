@@ -22,6 +22,7 @@ const config = {
 					$layouts: resolve('.', './src/lib/shared/layouts'),
 					$models: resolve('.', './src/lib/models'),
 					$data: resolve('.', './src/lib/data'),
+					$core: resolve('.', './src/lib/core'),
 					$utils: resolve('.', './src/lib/utils')
 				}
 			},

@@ -1,15 +1,15 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
+	import { createApi } from '$core/services/http';
 
 	export const load: Load = async ({ fetch }) => {
-		const res1 = await fetch(`/api/navigation`);
-		const navigationData = await res1.json();
-
-		const res2 = await fetch(`/api/users`);
-		const userData = await res2.json();
+		const api = createApi(`/api`, fetch);
 
 		return {
-			props: { navigationData, userData }
+			props: {
+				navigationData: await api.navigation(),
+				userData: await api.user('vhs')
+			}
 		};
 	};
 </script>
@@ -23,7 +23,7 @@
 	import { DefaultLayout } from '$layouts';
 
 	export let navigationData: INavItem[];
-	export let userData: IUser[];
+	export let userData: IUser;
 
 	$: navigation = navigationData
 		.sort((a, b) => a.weight - b.weight)
@@ -32,8 +32,8 @@
 		});
 
 	$: currentNavItem = navigation.find((navItem) => navItem.current);
-	$: [firstUser] = userData;
 	$: pageTitle = currentNavItem?.name;
+	$: user = userData;
 
 	beforeUpdate(() => {
 		const [firstNavItem] = navigation;
@@ -44,6 +44,6 @@
 	});
 </script>
 
-<DefaultLayout {navigation} user={firstUser} {pageTitle}>
+<DefaultLayout {navigation} {user} {pageTitle}>
 	<slot />
 </DefaultLayout>
