@@ -9,7 +9,10 @@
 	export let pageTitle: string | undefined;
 </script>
 
-<PageMeta {pageTitle} />
+{#key pageTitle}
+	<PageMeta {pageTitle} />
+{/key}
+
 <GlobalNav {navigation} {user} />
 
 {#if pageTitle}
