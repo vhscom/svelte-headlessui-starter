@@ -1,4 +1,7 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind base;
+@import '@fontsource/inter';
+
 @tailwind components;
+@tailwind base;
 @tailwind utilities;
+
+/* Write your global styles here, in PostCSS syntax */
