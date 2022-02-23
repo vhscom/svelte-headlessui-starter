@@ -1,60 +1,23 @@
 # SvelteKit Headless UI Starter
 
-Launch your SvelteKit app with Tailwind and Headless UI.
+Launch your next app with SvelteKit and Headless UI.
 
 ## Highlights
 
-- 🎨 Tailwind CSS with Forms and Typography plugins
-- 🧪 Headless UI via [@rgossiaux/svelte-headlessui](https://github.com/rgossiaux/svelte-headlessui)
-- 💄 Prettier with Tailwind automatic class sorting
-- 🚩 Unplugin Icons for access to all [Icônes](https://icones.js.org/) icons
-- ⚡️ Cssnano stylesheet compression for prod builds
-- 📝 Changesets for automated changelog generation
-- 🚚 Dynamic global navigation driven by API calls
-- 📈 Basic SEO with large social sharing cards
+- 🏗️ [SvelteKit](https://kit.svelte.dev/) beta for file system-based routing
+- 🏗️ [Svelte](https://svelte.dev/) for developing fast, lightweight apps
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) with Forms and Typography plugins
+- 🧪 [Headless UI](https://headlessui.dev/) for access to Tailwind UI elements
+- 💄 [Prettier](https://prettier.io/) with Tailwind automatic class sorting
+- 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
+- ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression
+- 🦋 [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs
+- 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
+- 🚀 [Vercel](https://vercel.com/) deployments no configuration needed
 
 ## Demo
 
-View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to try it out.
-
-## Screenshot
-
-![Browser window](static/screenshot.webp)
-
-## Structure
-
-Inspired by the [svelte-starter](https://github.com/navneetsharmaui/sveltekit-starter) app:
-
-```
-├── src
-│   ├── environments
-│   ├── hooks
-│   ├── lib
-│   │   ├── core
-│   │   │   └── services
-│   │   ├── data
-│   │   ├── models
-│   │   │   ├── classes
-│   │   │   ├── enums
-│   │   │   ├── interfaces
-│   │   │   └── types
-│   │   ├── shared
-│   │   │   ├── components
-│   │   │   │   ├── elements
-│   │   │   │   ├── meta
-│   │   │   │   ├── sections
-│   │   │   │   └── ui
-│   │   │   └── layouts
-│   │   └── utils
-│   ├── routes
-│   │   ├── account
-│   │   └── api
-│   ├── stores
-│   └── styles
-└── static
-```
-
-Folders created on an as-needed basis.
+View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to see what comes out of the box.
 
 ## Developing
 
@@ -83,18 +46,14 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-### Creating a version
+## Versioning
 
 To create a new version run `pnpm changeset version` and follow the prompts.
 
 ## Publishing
 
-Update package name in `package.json` for your project then run `pnpm changeset publish` followed by `git push --follow-tags`. Assumes you have logged into NPM and have a git remote configured already.
+To publish a new version run `pnpm changeset publish` followed by `git push --follow-tags`. Assumes you have logged into NPM and have a git remote configured.
 
 ## Deploying
 
-To deploy your software to Vercel create a Vercel account (requires a phone number) then run `pnpm deploy` or `pnpm deploy -- --prod`. If you're creating a static site, consider swapping out `adapter-auto` with [`adapter-static`](https://www.npmjs.com/package/@sveltejs/adapter-static) and deploy to [Codeberg Pages](https://codeberg.page/) as an ethical alternative to commercial hosting.
-
-## Continuous Integration
-
-[Request access](https://codeberg.org/Codeberg-CI/request-access) to become an early adopter of Codeberg CI. Codeberg CI uses [Woodpecker](https://woodpecker-ci.org/), a fork of Drone, and is built around principles of software freedom.
+To deploy your app to Vercel run `pnpm deploy` for testing or `pnpm deploy -- --prod` for production. Assumes you've signed-up for and logged into your Vercel account.

@@ -12,7 +12,7 @@ export const userData: UserModel[] = [
 
 export const siteData: SiteModel = new SiteModel().deserialize({
 	name: 'SvelteKit Headless UI Starter',
-	description: 'Launch your SvelteKit app using Tailwind and Headless UI.',
+	description: 'Launch your next app with SvelteKit and Headless UI.',
 	keywords: ['svelte', 'sveltekit', 'tailwindcss', 'headlessui'],
 	images: [{ url: 'social.png' }]
 });
