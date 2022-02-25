@@ -41,7 +41,8 @@
 			"$models": ["src/lib/models/index.ts"],
 			"$models/*": ["src/lib/models/*"],
 			"$utils": ["src/lib/utils/index.ts"],
-			"$utils/*": ["src/lib/utils/*"]
+			"$utils/*": ["src/lib/utils/*"],
+			"$environment": ["src/environment/index.ts"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]

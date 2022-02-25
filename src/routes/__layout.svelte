@@ -2,13 +2,15 @@
 	import type { Load } from '@sveltejs/kit';
 	import { createApi } from '$core/services/http';
 
-	export const load: Load = async ({ fetch }) => {
+	export const load: Load = async ({ fetch, session }) => {
 		const api = createApi(`/api`, fetch);
+
+		const user = session.user;
 
 		return {
 			props: {
 				navigationData: await api.navigation(),
-				userData: await api.user('vhs')
+				userData: await api.user(user?.name ?? 'sir')
 			}
 		};
 	};

@@ -4,7 +4,7 @@ Launch your next app with SvelteKit and Headless UI.
 
 ## Highlights
 
-- 🏗️ [SvelteKit](https://kit.svelte.dev/) beta for file system-based routing
+- 🏗️ [SvelteKit](https://kit.svelte.dev/) for file system-based routing
 - 🏗️ [Svelte](https://svelte.dev/) for developing fast, lightweight apps
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) with Forms and Typography plugins
 - 🧪 [Headless UI](https://headlessui.dev/) for access to Tailwind UI elements
@@ -14,6 +14,8 @@ Launch your next app with SvelteKit and Headless UI.
 - 🦋 [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments no configuration needed
+- 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
+- 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 
 ## Demo
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { session } from '$app/stores';
 	import { classes } from '$utils';
 	import type { INavItem } from '$models/interfaces/nav-item.interface';
 	import type { IUser } from '$models/interfaces/user.interface';
@@ -124,14 +125,25 @@
 							>
 								Settings
 							</MenuItem>
-							<MenuItem
-								href="/account/signout"
-								sveltekit:prefetch
-								class={({ active }) =>
-									classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-							>
-								Sign out
-							</MenuItem>
+							{#if $session?.user}
+								<MenuItem
+									href="/account/signout"
+									sveltekit:prefetch
+									class={({ active }) =>
+										classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+								>
+									Sign out
+								</MenuItem>
+							{:else}
+								<MenuItem
+									href="/account/signin"
+									sveltekit:prefetch
+									class={({ active }) =>
+										classes(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+								>
+									Sign in
+								</MenuItem>
+							{/if}
 						</MenuItems>
 					</Transition>
 				</Menu>

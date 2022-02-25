@@ -7,6 +7,11 @@ export const userData: UserModel[] = [
 		name: 'VHS',
 		email: 'vhsdev@tutanota.com',
 		id: 'vhs'
+	},
+	{
+		name: 'Drew DeVault',
+		email: 'sir@cmpwn.com',
+		id: 'sir'
 	}
 ].map((value) => new UserModel().deserialize(value));
 

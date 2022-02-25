@@ -23,7 +23,8 @@ const config = {
 					$models: resolve('.', './src/lib/models'),
 					$data: resolve('.', './src/lib/data'),
 					$core: resolve('.', './src/lib/core'),
-					$utils: resolve('.', './src/lib/utils')
+					$utils: resolve('.', './src/lib/utils'),
+					$environment: resolve('.', './src/environment')
 				}
 			},
 			plugins: [
