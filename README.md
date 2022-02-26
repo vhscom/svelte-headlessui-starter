@@ -1,17 +1,17 @@
-# SvelteKit Headless UI Starter
+# Svelte Headless UI Starter
 
-Launch your next app with SvelteKit and Headless UI.
+Launch your next Svelte app using Headless UI.
 
-![SvelteKit Headless UI Starter](static/screenshot.png)
+![Svelte Headless UI Starter](static/screenshot.png)
 
-SvelteKit Headless UI Starter is a template intended to make it easier to begin building libre SvelteKit apps using Tailwind CSS with Headless UI. It does so by giving some opinion to the application structure and tools used, and implements some of the more mundane aspects of application development such as SEO and authentication. To get started simply use this template and you may begin deploying to Vercel right away.
+Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. Learn more about libre software in [What is Free Software?](https://www.gnu.org/philosophy/free-sw.en.html)
 
 ## Highlights
 
-- 🏗️ [SvelteKit](https://kit.svelte.dev/) for file system-based routing
-- 🏗️ [Svelte](https://svelte.dev/) for developing fast, lightweight apps
+- 🏗️ [SvelteKit](https://kit.svelte.dev/) cybernetically enhanced routing
+- 🔨 [Svelte](https://svelte.dev/) for developing fast, lightweight apps
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) with Forms and Typography plugins
-- 🧪 [Headless UI](https://headlessui.dev/) for access to Tailwind UI elements
+- 🧪 [Headless UI](https://headlessui.dev/) for a sophisticated and accessible UI
 - 💄 [Prettier](https://prettier.io/) with Tailwind automatic class sorting
 - 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression
@@ -21,10 +21,11 @@ SvelteKit Headless UI Starter is a template intended to make it easier to begin 
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
 - 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
+- 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
 
 ## Demo
 
-View the [online demo](https://sveltekit-headlessui-starter.vercel.app) to see what you can expect.
+View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what you can expect.
 
 ## Structure
 
@@ -100,7 +101,7 @@ To deploy your app to Vercel run `pnpm deploy` for testing or `pnpm deploy -- --
 
 ## Rights
 
-Launch your next app with SvelteKit and Headless UI.<br>
+Launch your next Svelte app using Headless UI.<br>
 Copyright (C) 2022  VHS \<vhsdev@tutanota.com\> (https://vhs.codeberg.page)
 
-SvelteKit Headless UI Starter is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+Svelte Headless UI Starter is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

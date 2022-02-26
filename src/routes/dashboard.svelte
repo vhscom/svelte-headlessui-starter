@@ -1,9 +1,9 @@
-<h2>Welcome to SvelteKit Headless UI Starter</h2>
-<p>Launch your next app with SvelteKit and Headless UI.</p>
+<h2>Welcome to Svelte Headless UI Starter</h2>
+<p>Launch your next Svelte app using Headless UI.</p>
 <ul>
 	<li>
-		Visit <a href="https://codeberg.org/vhs/sveltekit-headlessui-starter">codeberg.org</a> to view the
-		source code
+		Visit <a href="https://codeberg.org/vhs/svelte-headlessui-starter">codeberg.org</a> to view the application
+		source
 	</li>
 	<li>
 		Visit <a href="https://tailwindcss.com">tailwindcss.com</a> to read the Tailwind documentation
