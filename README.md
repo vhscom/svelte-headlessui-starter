@@ -16,6 +16,7 @@ Svelte Headless UI Starter is a template designed to make it easier and faster t
 - 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression
 - ✏️ [Fontsource](https://fontsource.org/) self-hosted web font integration
+- 🎭 [Playwright](https://playwright.dev/) end-to-end testing framework
 - 🦋 [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
@@ -57,7 +58,8 @@ The application structure is as follows:
 │       └── api
 │           ├── auth
 │           └── user
-└── static
+├── static
+└── tests
 ```
 
 ## Developing
