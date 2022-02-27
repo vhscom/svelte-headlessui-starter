@@ -20,9 +20,9 @@
 	<GlobalNav {navigation} {user} />
 
 	{#if pageTitle}
-		<header class="bg-white shadow">
+		<header class="bg-white dark:bg-gray-800/50 shadow">
 			<div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-				<h1 class="text-3xl font-bold text-gray-900">
+				<h1 class="text-3xl font-bold text-gray-900 dark:text-white">
 					{pageTitle}
 				</h1>
 			</div>
@@ -30,7 +30,7 @@
 	{/if}
 
 	<main>
-		<div class="prose mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+		<div class="prose dark:prose-invert mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
 			<slot />
 		</div>
 	</main>

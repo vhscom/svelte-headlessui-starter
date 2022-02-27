@@ -9,7 +9,7 @@
 </script>
 
 {#if errorParam}
-	<aside class="not-prose mb-4 bg-red-50 p-4 text-sm shadow-inner">
+	<aside class="not-prose mb-4 bg-red-50 dark:bg-red-900/70 p-4 text-sm shadow-inner">
 		<h1 class="font-semibold">Authorization request error</h1>
 		<p>
 			{params.get('error_description')}
@@ -19,7 +19,7 @@
 {/if}
 
 {#if badCredentials}
-	<aside class="not-prose mb-4 bg-red-50 p-4 text-sm shadow-inner">
+	<aside class="not-prose mb-4 bg-red-50 dark:bg-red-900/70 p-4 text-sm shadow-inner">
 		<h1 class="font-semibold">Authorization error</h1>
 		<p>
 			{user.message}
