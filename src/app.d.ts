@@ -69,14 +69,19 @@ interface GitHubAuthErrorProfile {
 // See https://kit.svelte.dev/docs/typescript
 // for information about these interfaces
 declare namespace App {
-	// eslint-disable-next-line @typescript-eslint/no-empty-interface
-	interface Locals {}
+	interface Locals {
+		/**
+		 * True for responses with 4xx and 5xx status codes.
+		 */
+		error: boolean;
+	}
 
 	// eslint-disable-next-line @typescript-eslint/no-empty-interface
 	interface Platform {}
 
 	interface Session {
 		user: Readonly<GitHubUserProfile> & Partial<GitHubAuthErrorProfile>;
+		error: boolean;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-empty-interface
