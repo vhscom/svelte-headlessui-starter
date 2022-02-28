@@ -6,6 +6,10 @@ Launch your next Svelte app using Headless UI.
 
 Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. Learn more about libre software in [What is Free Software?](https://www.gnu.org/philosophy/free-sw.en.html)
 
+## Demo
+
+View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what you can expect.
+
 ## Highlights
 
 - 🏗️ [SvelteKit](https://kit.svelte.dev/) cybernetically enhanced routing
@@ -24,10 +28,6 @@ Svelte Headless UI Starter is a template designed to make it easier and faster t
 - ⚗️ [Supabase](https://supabase.com/) integration for dynamic navigation
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 - 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
-
-## Demo
-
-View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what you can expect.
 
 ## Structure
 
