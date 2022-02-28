@@ -1,1 +1,1 @@
-Account registration page.
+<p>Example content for the registration page.</p>

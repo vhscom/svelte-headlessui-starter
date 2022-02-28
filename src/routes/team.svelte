@@ -1,1 +1,1 @@
-Example content for the team page.
+<p>Example content for the team page.</p>
