@@ -3,9 +3,9 @@ lockfileVersion: 5.3
 specifiers:
   '@changesets/cli': ^2.21.0
   '@fontsource/inter': ^4.5.4
-  '@iconify/json': ^2.1.7
+  '@iconify/json': ^2.1.8
   '@playwright/test': ^1.19.2
-  '@rgossiaux/svelte-headlessui': ^1.0.0-beta.9
+  '@rgossiaux/svelte-headlessui': ^1.0.0-beta.10
   '@supabase/supabase-js': ^1.30.7
   '@sveltejs/adapter-auto': ^1.0.0-next.29
   '@sveltejs/kit': next
@@ -30,7 +30,7 @@ specifiers:
   sk-auth: ^0.4.1
   svelte: ^3.46.4
   svelte-check: ^2.4.5
-  svelte-meta-tags: ^2.3.1
+  svelte-meta-tags: ^2.3.2
   svelte-preprocess: ^4.10.4
   tailwindcss: ^3.0.23
   ts-md5: ^1.2.11
@@ -42,9 +42,9 @@ specifiers:
 devDependencies:
   '@changesets/cli': 2.21.0
   '@fontsource/inter': 4.5.4
-  '@iconify/json': 2.1.7
+  '@iconify/json': 2.1.8
   '@playwright/test': 1.19.2
-  '@rgossiaux/svelte-headlessui': 1.0.0-beta.9_svelte@3.46.4
+  '@rgossiaux/svelte-headlessui': 1.0.0-beta.10_svelte@3.46.4
   '@supabase/supabase-js': 1.30.7
   '@sveltejs/adapter-auto': 1.0.0-next.29
   '@sveltejs/kit': 1.0.0-next.287_svelte@3.46.4
@@ -69,7 +69,7 @@ devDependencies:
   sk-auth: 0.4.1_@sveltejs+kit@1.0.0-next.287
   svelte: 3.46.4
   svelte-check: 2.4.5_267bdea6a4c44ec9b77b315a8750f243
-  svelte-meta-tags: 2.3.1_svelte@3.46.4+typescript@4.5.5
+  svelte-meta-tags: 2.3.2_svelte@3.46.4+typescript@4.5.5
   svelte-preprocess: 4.10.4_f1d8dc2d3af270254b6b481163b9d605
   tailwindcss: 3.0.23_autoprefixer@10.4.2
   ts-md5: 1.2.11
@@ -871,8 +871,8 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
 
-  /@iconify/json/2.1.7:
-    resolution: {integrity: sha512-vC6mIZVMQY2X2sBSW4CNSH+pdi9mwLNZj+VwDXI9tqD2fkWXdXI9OCiCR0D4yqx3Vdg0ttcizXqAmhWQoHD1Sw==}
+  /@iconify/json/2.1.8:
+    resolution: {integrity: sha512-2IJXUbw9ZesptnctgcpHsRlmUqI3kg7XUWNA/FgwDv9Cj8lQMUxF3L0M52+eidpci9ChftYWoEtIYOBKUQUqow==}
     dependencies:
       '@iconify/types': 1.0.12
       pathe: 0.0.2
@@ -996,8 +996,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@rgossiaux/svelte-headlessui/1.0.0-beta.9_svelte@3.46.4:
-    resolution: {integrity: sha512-w6FP70vXzl7gxlYP3EJN6u2vQd30Vr/qmCkSJbp8ZkuCAbTEt3b3YPJFrcOS3Pkz4+XU4z+bMFUALTgXId6XsQ==}
+  /@rgossiaux/svelte-headlessui/1.0.0-beta.10_svelte@3.46.4:
+    resolution: {integrity: sha512-0pSkKreSpVaE8WPBzF+IqHPvrsh8D2aJw3sh3VdermoQb/G3iChTz4sjWv3DOM0L+iijSUTZc733vDW2JZssdg==}
     peerDependencies:
       svelte: ^3.44.0
     dependencies:
@@ -4621,8 +4621,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /schema-dts/1.0.0_typescript@4.5.5:
-    resolution: {integrity: sha512-9t8gnY3RW2CbpuvA0pIpcaHFXkJTeNnWR4uaWI+PiYSfpuEeMw+2Q0Gac6YTnQb1B8TR6/+G71gQWuSE7dq6Zw==}
+  /schema-dts/1.1.0_typescript@4.5.5:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
     peerDependencies:
       typescript: '>=4.1.0'
     dependencies:
@@ -4954,12 +4954,12 @@ packages:
       svelte: 3.46.4
     dev: true
 
-  /svelte-meta-tags/2.3.1_svelte@3.46.4+typescript@4.5.5:
-    resolution: {integrity: sha512-ad9P25GFQbldzyUQN82DsFH7yRPiwpKe3Pl3klZLBn6KJbH3wFmSlPX6k3kEmmbV51Ixhe6xQjtHGoiRwnzmIQ==}
+  /svelte-meta-tags/2.3.2_svelte@3.46.4+typescript@4.5.5:
+    resolution: {integrity: sha512-fQQXG+Ej/bZZmskrxAETbzwJrl4kXPDPCZWtMkshwal4lqM5qsJ26P6kMhkES11KtdoVjPiDz+UI9DoNQ7UroA==}
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
-      schema-dts: 1.0.0_typescript@4.5.5
+      schema-dts: 1.1.0_typescript@4.5.5
       svelte: 3.46.4
     transitivePeerDependencies:
       - typescript
