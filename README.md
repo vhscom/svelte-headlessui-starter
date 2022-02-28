@@ -21,6 +21,7 @@ Svelte Headless UI Starter is a template designed to make it easier and faster t
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
 - 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
+- ⚗️ [Supabase](https://supabase.com/) integration for dynamic navigation
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 - 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
 
@@ -40,7 +41,8 @@ The application structure is as follows:
 │   │   ├── core
 │   │   │   └── services
 │   │   │       ├── auth
-│   │   │       └── http
+│   │   │       ├── http
+│   │   │       └── supabase
 │   │   ├── data
 │   │   ├── models
 │   │   │   ├── classes

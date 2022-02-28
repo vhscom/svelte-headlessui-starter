@@ -4,7 +4,6 @@
 
 	export const load: Load = async ({ fetch, session }) => {
 		const api = createApi(`/api`, fetch);
-
 		const user = session.user;
 
 		return {

@@ -16,8 +16,8 @@ export const userData: UserModel[] = [
 ].map((value) => new UserModel().deserialize(value));
 
 export const siteData: SiteModel = new SiteModel().deserialize({
-	name: 'SvelteKit Headless UI Starter',
-	description: 'Launch your next app with SvelteKit and Headless UI.',
+	name: 'Svelte Headless UI Starter',
+	description: 'Launch your next Svelte app using Headless UI.',
 	keywords: ['svelte', 'sveltekit', 'tailwindcss', 'headlessui'],
 	images: [{ url: 'social.png' }]
 });

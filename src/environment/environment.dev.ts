@@ -10,8 +10,12 @@ export const developmentEnvironment: EnvironmentConfig = {
 	authConfig: {
 		GITHUB_OAUTH_CLIENT_ID: process.env.GITHUB_OAUTH_CLIENT_ID,
 		GITHUB_OAUTH_CLIENT_SECRET: process.env.GITHUB_OAUTH_CLIENT_SECRET,
-		JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
+		OAUTH_JWT_SECRET_KEY: process.env.OAUTH_JWT_SECRET_KEY,
 		CUSTOM_OAUTH_REDIRECT_URI: process.env.CUSTOM_OAUTH_REDIRECT_URI
+	},
+	supabaseConfig: {
+		SUPABASE_PUBLIC_ANON_KEY: process.env.SUPABASE_PUBLIC_ANON_KEY,
+		SUPABASE_PROJECT_URL: process.env.SUPABASE_PROJECT_URL
 	},
 	debug: true
 };

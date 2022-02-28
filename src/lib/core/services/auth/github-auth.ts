@@ -52,5 +52,5 @@ export const githubAuth = new SvelteKitAuth({
 		// ...and access to other available AuthCallbacks as well
 	},
 	...developmentOptions,
-	jwtSecret: authConfig.JWT_SECRET_KEY
+	jwtSecret: authConfig.OAUTH_JWT_SECRET_KEY
 });
