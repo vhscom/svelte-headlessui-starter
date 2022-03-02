@@ -51,6 +51,7 @@ The application structure is as follows:
 │   │   ├── shared
 │   │   │   ├── components
 │   │   │   │   ├── auth
+│   │   │   │   ├── form
 │   │   │   │   ├── meta
 │   │   │   │   └── navigation
 │   │   │   └── layouts

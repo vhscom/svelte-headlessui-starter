@@ -2,7 +2,8 @@
 	import { slide } from 'svelte/transition';
 	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 	import ChevronUpIcon from '~icons/heroicons-solid/chevron-up';
-	import CodebergIcon from '~icons/simple-icons/codeberg';
+	import CodebergIcon from '~icons/custom/codeberg';
+	import { IconButton } from '$components';
 
 	const docs = [
 		{
@@ -48,12 +49,10 @@
 </script>
 
 <p>Get the source code.</p>
-<a
-	href="https://codeberg.org/vhs/svelte-headlessui-starter"
-	class="inline-flex justify-center rounded-md border border-transparent bg-indigo-100 px-3 py-2 text-sm font-medium text-indigo-900 no-underline hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
->
-	<CodebergIcon class="mr-2" /> Download on Codeberg
-</a>
+
+<IconButton icon={CodebergIcon} href="https://codeberg.org/vhs/svelte-headlessui-starter">
+	Download on Codeberg
+</IconButton>
 
 <p>Access frequently used documentation.</p>
 
