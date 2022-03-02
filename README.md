@@ -15,7 +15,7 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 🏗️ [SvelteKit](https://kit.svelte.dev/) cybernetically enhanced routing
 - 🔨 [Svelte](https://svelte.dev/) for developing fast, lightweight apps
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) with Forms and Typography plugins
-- 🧪 [Headless UI](https://headlessui.dev/) for a sophisticated and accessible UI
+- 🧪 [Svelte Headless UI](https://svelte-headlessui.goss.io) for sophisticated, accessible UI
 - 💄 [Prettier](https://prettier.io/) with Tailwind automatic class sorting
 - 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression

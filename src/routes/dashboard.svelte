@@ -7,12 +7,12 @@
 	const docs = [
 		{
 			name: 'Headless UI',
-			url: 'https://headlessui.dev',
+			url: 'https://svelte-headlessui.goss.io',
 			description: 'Unstyled, accessible UI components, designed to integrate with Tailwind CSS.'
 		},
 		{
 			name: 'Icônes',
-			url: 'https://icones.js.org/',
+			url: 'https://icones.js.org',
 			description: 'Icon Explorer with Instant searching, powered by Iconify.'
 		},
 		{
