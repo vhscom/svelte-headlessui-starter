@@ -1,5 +1,10 @@
 # Svelte Headless UI Starter
 
+[![Latest NPM version](https://flat.badgen.net/npm/v/svelte-headlessui-starter)](https://npmjs.com/svelte-headlessui-starter)
+[![Weekly Downloads](https://flat.badgen.net/npm/dw/svelte-headlessui-starter)](https://npmjs.com/svelte-headlessui-starter)
+[![Minimum SvelteKit version](https://flat.badgen.net/badge/SvelteKit/>=1.0.0-next.289/ff3e00)](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md#100-next289)
+[![AGPL licensed](https://flat.badgen.net/npm/license/svelte-headlessui-starter)](https://codeberg.org/vhs/svelte-headlessui-starter/src/branch/trunk/COPYING)
+
 Launch your next Svelte app using Headless UI.
 
 ![Svelte Headless UI Starter](static/screenshot.png)
@@ -15,12 +20,12 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 🏗️ [SvelteKit](https://kit.svelte.dev/) cybernetically enhanced routing
 - 🔨 [Svelte](https://svelte.dev/) for developing fast, lightweight apps
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) with Forms and Typography plugins
-- 🧪 [Svelte Headless UI](https://svelte-headlessui.goss.io) for sophisticated, accessible UI
+- 🧪 [Headless UI](https://svelte-headlessui.goss.io) for a sophisticated, accessible UI
 - 💄 [Prettier](https://prettier.io/) with Tailwind automatic class sorting
 - 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression
 - ✏️ [Fontsource](https://fontsource.org/) self-hosted web font integration
-- 🎭 [Playwright](https://playwright.dev/) end-to-end testing framework
+- 🎭 [Playwright](https://playwright.dev/) browser testing framework
 - 🦋 [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
