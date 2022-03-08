@@ -9,7 +9,7 @@ Launch your next Svelte app using Headless UI.
 
 ![Svelte Headless UI Starter](static/screenshot.png)
 
-Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. Learn more about libre software in [What is Free Software?](https://www.gnu.org/philosophy/free-sw.en.html)
+Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. The starter intends to remain as close as possible to the default experience one might achieve using `npm init svelte@next` and then building an app. Consult [What is Free Software?](https://www.gnu.org/philosophy/free-sw.en.html) to learn more about libre software and the principles of ethical software development.
 
 ## Demo
 
@@ -81,9 +81,13 @@ pnpm run dev
 pnpm run dev -- --open
 ```
 
+### Making commits
+
+Use the approach that best suits your personal preferences and preferred work style. If you would like to add emojis to your commit messages, see [Emojify Conventional Commits with Git](https://vhs.codeberg.page/post/emojify-conventional-commits-git/) for one approach.
+
 ### Adding a changeset
 
-To add a changeset run `pnpm changeset` and follow the prompts.
+To add a changeset run `pnpm changeset` and follow the prompts. If this is your first time adding a changeset, run `pnpm changeset init` to create the `.changeset` folder and commit it to the repository.
 
 ## Building
 
@@ -95,15 +99,13 @@ pnpm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
 ## Versioning
 
 To create a new version run `pnpm changeset version` and follow the prompts.
 
 ## Publishing
 
-To publish a new version run `pnpm changeset publish` followed by `git push --follow-tags`. Assumes you have logged into NPM and have a git remote configured.
+To publish a new version run `pnpm changeset publish` to generate a `CHANGELOG`, followed by `git push --follow-tags`. Assumes you have logged into NPM and have a git remote configured.
 
 ## Deploying
 
@@ -111,7 +113,7 @@ To deploy your app to Vercel run `pnpm deploy` for testing or `pnpm deploy -- --
 
 ## Rights
 
-Launch your next Svelte app using Headless UI.<br>
+Svelte Headless UI Starter - Launch your next Svelte app using Headless UI.<br>
 Copyright (C) 2022&nbsp;&nbsp;VHS &lt;vhsdev@tutanota.com&gt; (https://vhs.codeberg.page)
 
 Svelte Headless UI Starter is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
