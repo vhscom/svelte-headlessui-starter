@@ -63,14 +63,16 @@
 								{href}
 								sveltekit:prefetch
 								class={classes(
-									current
-										? 'bg-gray-900 text-white'
-										: 'text-gray-300 hover:bg-gray-700 hover:text-white',
-									'px-3 py-2 rounded-md text-sm font-medium'
+									current ? 'bg-gray-900 text-white' : 'text-gray-300',
+									'relative px-3 py-2 rounded-md text-sm font-medium group'
 								)}
 								aria-current={current ? 'page' : undefined}
 							>
-								{name}
+								<span
+									aria-hidden="true"
+									class="absolute top-1/2 left-1/2 h-full w-0 -translate-x-1/2 -translate-y-1/2 rounded-md bg-gray-700 opacity-0 transition-all group-hover:w-full group-hover:opacity-100"
+								/>
+								<span class="relative group-hover:text-white">{name}</span>
 							</a>
 						{/each}
 					</div>
