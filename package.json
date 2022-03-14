@@ -1,6 +1,6 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.4.4",
+	"version": "0.4.5",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
@@ -43,7 +43,7 @@
 		"@changesets/cli": "^2.21.1",
 		"@fontsource/inter": "^4.5.5",
 		"@iconify/json": "^2.1.14",
-		"@playwright/test": "^1.19.2",
+		"@playwright/test": "^1.20.0-beta-1647057403000",
 		"@rgossiaux/svelte-headlessui": "^1.0.0-beta.12",
 		"@supabase/supabase-js": "^1.31.1",
 		"@sveltejs/adapter-auto": "next",
