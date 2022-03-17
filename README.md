@@ -24,6 +24,7 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 💄 [Prettier](https://prettier.io/) with Tailwind automatic class sorting
 - 🚩 [Unplugin Icons](https://github.com/antfu/unplugin-icons) to access to all [Icônes](https://icones.js.org/) icons
 - ⚡️ [Cssnano](https://cssnano.co/) for production stylesheet compression
+- ⚡️ [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) dynamic resource caching
 - ✏️ [Fontsource](https://fontsource.org/) self-hosted web font integration
 - 🎭 [Playwright](https://playwright.dev/) browser testing framework
 - 🦋 [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs

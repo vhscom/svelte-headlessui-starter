@@ -16,6 +16,8 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		files: { serviceWorker: 'src/sw' },
+		serviceWorker: { register: true },
 		vite: {
 			resolve: {
 				alias: {

@@ -1,25 +1,19 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
 	"license": "AGPL-3.0-or-later",
 	"keywords": [
-		"svelte",
-		"sveltejs",
 		"sveltekit",
-		"vite",
 		"tailwindcss",
 		"headlessui",
-		"postcss",
-		"cssnano",
-		"oauth2",
-		"playwright",
-		"changesets",
 		"typescript",
 		"jamstack",
-		"prettier"
+		"libre",
+		"starter",
+		"template"
 	],
 	"homepage": "https://vhs.codeberg.page/code/svelte-headlessui-starter",
 	"repository": {
