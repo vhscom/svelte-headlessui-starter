@@ -9,7 +9,7 @@ Launch your next Svelte app using Headless UI.
 
 ![Svelte Headless UI Starter](static/screenshot.png)
 
-Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. The starter intends to remain as close as possible to the default experience one might achieve using `npm init svelte@next` and then building an app. Consult [What is Free Software?](https://www.gnu.org/philosophy/free-sw.en.html) to learn more about libre software and the principles of ethical software development.
+Svelte Headless UI Starter is a template designed to make it easier and faster to build libre Svelte apps using Headless UI. The starter intends to remain as close as possible to the default experience one might achieve using `npm init svelte@next` and then building a minimalist app skeleton with Headless UI.
 
 ## Demo
 
