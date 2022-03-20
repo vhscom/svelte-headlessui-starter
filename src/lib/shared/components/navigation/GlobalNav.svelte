@@ -64,7 +64,7 @@
 								sveltekit:prefetch
 								class={classes(
 									current ? 'bg-gray-900 text-white' : 'text-gray-300',
-									'relative px-3 py-2 rounded-md text-sm font-medium group'
+									'relative px-3 py-2 rounded-md text-sm font-medium group focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800'
 								)}
 								aria-current={current ? 'page' : undefined}
 							>
@@ -83,7 +83,7 @@
 			>
 				<button
 					type="button"
-					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800"
 				>
 					<span class="sr-only">View notifications</span>
 					<BellIcon class="h-6 w-6" />
@@ -92,7 +92,7 @@
 				<!-- Profile dropdown -->
 				<Menu class="relative ml-3">
 					<MenuButton
-						class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+						class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800"
 					>
 						<span class="sr-only">Open user menu</span>
 						<img class="h-8 w-8 rounded-full" src={gravitarUri} alt="" />
