@@ -30,8 +30,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-		"changeset": "changeset",
-		"deploy": "vercel"
+		"changeset": "changeset"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.21.1",
@@ -69,8 +68,19 @@
 		"ts-md5": "^1.2.11",
 		"tslib": "^2.3.1",
 		"typescript": "^4.6.2",
-		"unplugin-icons": "^0.13.4",
+		"unplugin-icons": "^0.13.4"
+	},
+	"peerDependencies": {
+		"@cloudflare/wrangler": "^1.19.11",
 		"vercel": "^24.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@cloudflare/wrangler": {
+			"optional": true
+		},
+		"vercel": {
+			"optional": true
+		}
 	},
 	"type": "module"
 }

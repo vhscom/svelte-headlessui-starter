@@ -110,7 +110,15 @@ To publish a new version run `pnpm changeset publish` to generate a `CHANGELOG`,
 
 ## Deploying
 
-To deploy your app to Vercel run `pnpm deploy` for testing or `pnpm deploy -- --prod` for production. Assumes you've signed-up for and logged into your Vercel account.
+Supported deployment environments include Vercel, Cloudflare and Netlify. Other environments may be included in the future. See [adapter-auto](https://www.npmjs.com/package/@sveltejs/adapter-auto) for most current list of supported environments. Instructions for Vercel and Cloudflare included below.
+
+### Vercel
+
+To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for production. Assumes you've signed-up for and authenticated with Vercel from the [Vercel CLI](https://vercel.com/cli). No additional configuration is required.
+
+### Cloudflare
+
+Deploy to Cloudflare using the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) for additional help.
 
 ## Rights
 
