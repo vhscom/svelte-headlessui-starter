@@ -118,7 +118,7 @@ To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for pro
 
 ### Cloudflare
 
-Deploy to Cloudflare using the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) for additional help.
+Deploy to Cloudflare using the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) and [here](https://github.com/sveltejs/kit/issues/2966) for additional help.
 
 ## Rights
 

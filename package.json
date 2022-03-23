@@ -71,11 +71,11 @@
 		"unplugin-icons": "^0.13.4"
 	},
 	"peerDependencies": {
-		"@cloudflare/wrangler": "^1.19.11",
+		"wrangler": "beta",
 		"vercel": "^24.0.0"
 	},
 	"peerDependenciesMeta": {
-		"@cloudflare/wrangler": {
+		"wrangler": {
 			"optional": true
 		},
 		"vercel": {
