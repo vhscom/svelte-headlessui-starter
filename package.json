@@ -20,6 +20,9 @@
 		"type": "git",
 		"url": "https://codeberg.org/vhs/svelte-headlessui-starter.git"
 	},
+	"engines": {
+		"node": ">=14"
+	},
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
