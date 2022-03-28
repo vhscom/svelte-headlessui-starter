@@ -114,11 +114,17 @@ Supported deployment environments include Vercel, Cloudflare and Netlify. Other 
 
 ### Vercel
 
-To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for production. Assumes you've signed-up for and authenticated with Vercel from the [Vercel CLI](https://vercel.com/cli). No additional configuration is required.
+To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for production. Assumes you've signed-up for and authenticated with Vercel from the [Vercel CLI](https://vercel.com/cli). No additional configuration is required. If you wish to create a Continuous Integration (CI) setup with a git repo connected to Vercel, consult the Vercel docs.
 
 ### Cloudflare
 
-Deploy to Cloudflare using the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) and [here](https://github.com/sveltejs/kit/issues/2966) for additional help.
+Cloudflare is a little more involved and deployments blocked until [sk-auth/issues/42](https://github.com/Dan6erbond/sk-auth/issues/42) is resolved. The referenced issue has an open pull request in case you wish to fork until the package is updated with a fix.
+
+Start by updating the adapter used in `svelte.config.js` and change the import for `adapter-auto` to `adapter-cloudflare`. The Cloudflare adapter is already included with `adapter-auto`, though you may wish to `pnpm add -D adapter-cloudflare` to be more explicit and then remove `adapter-auto` from the project.
+
+You can get a CI setup running without any additional configuration described in the [Cloudflare Docs for Svelte](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/). Reference the `engines` property in `package.json` for the minimum Node version required to build the project.
+
+For CLI-based deployments use the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created within the project. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) and [here](https://github.com/sveltejs/kit/issues/2966) for additional help.
 
 ## Rights
 
