@@ -45,21 +45,23 @@
 				class="flex items-center border border-gray-300 dark:border-gray-600 shadow-sm bg-white dark:bg-gray-800 rounded-md"
 			>
 				<button
-					class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-l-md"
+					class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-700"
 					on:click={handlePreviousButtonClick}
 				>
+					<span class="sr-only">View previous month</span>
 					<ChevronLeftIcon class="h-4 w-4" />
 				</button>
 				<button
-					class="hidden sm:flex hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-4 py-1"
+					class="hidden sm:flex hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-700"
 					on:click={handleTodayButtonClick}
 				>
 					Today
 				</button>
 				<button
-					class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-r-md"
+					class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-r-md focus:outline-none focus:ring-2 focus:ring-indigo-700"
 					on:click={handleNextButtonClick}
 				>
+					<span class="sr-only">View next month</span>
 					<ChevronRightIcon class="h-4 w-4" />
 				</button>
 			</div>
@@ -73,7 +75,7 @@
 				Month view <ChevronDownIcon class="h-4 w-4 ml-3" />
 			</button>
 			<div class="hidden sm:flex items-center">
-				<span class="border-l border-gray-300 w-1 h-6 mr-5 ml-3" />
+				<span class="border-l border-gray-300 dark:border-gray-600 w-1 h-6 mr-5 ml-3" />
 				<button
 					disabled
 					class="bg-indigo-600 shadow-sm cursor-not-allowed py-1 px-4 rounded-md text-white"
