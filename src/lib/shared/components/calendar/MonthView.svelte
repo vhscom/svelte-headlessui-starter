@@ -17,6 +17,7 @@
 
 	$: cursor = dayjs();
 	$: dayGridItems = Array.from(getDayGridForMonth(cursor, weeksToShow).values());
+	$: today = dayjs();
 
 	const dayNames = getDayGridColumnHeaders();
 	const gridRows = Array.from({ length: weeksToShow }, (_, idx) => idx);
@@ -25,13 +26,13 @@
 	const isLastColumn = (column: number) => column === 6;
 	const isFirstColumn = (column: number) => column === 0;
 
-	const isToday = (date: Dayjs) => date.isSame(dayjs(), 'day');
+	const isToday = (date: Dayjs) => date.isSame(today, 'day');
 	const isCurrentMonth = (date: Dayjs) => {
 		return date.isBetween(cursor.startOf('month').subtract(1, 'day'), cursor.endOf('month'));
 	};
 
 	const handlePreviousButtonClick = () => (cursor = cursor.subtract(1, 'month'));
-	const handleTodayButtonClick = () => (cursor = dayjs());
+	const handleTodayButtonClick = () => (cursor = today);
 	const handleNextButtonClick = () => (cursor = cursor.add(1, 'month'));
 </script>
 
@@ -39,7 +40,9 @@
 	<header
 		class="flex items-center border dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 border-b-0 rounded-t-lg py-5 px-6"
 	>
-		<h1 class="text-lg flex-1 font-bold">{cursor.format('MMMM YYYY')}</h1>
+		<h1 class="text-lg flex-1 font-bold">
+			<time datetime={`${cursor.year()}-${cursor.format('MM')}`}>{cursor.format('MMMM YYYY')}</time>
+		</h1>
 		<div class="flex space-x-6 sm:space-x-3 items-center">
 			<div
 				class="flex items-center border border-gray-300 dark:border-gray-600 shadow-sm bg-white dark:bg-gray-800 rounded-md"
@@ -104,9 +107,11 @@
 		class="w-full grid border dark:border-gray-700 border-t-0 bg-white dark:bg-gray-800 rounded-b-lg grid-cols-7 grid-rows-6"
 	>
 		{#each gridRows as _, rowIndex}
+			{@const yearNumber = dayGridItems[rowIndex][0].year()}
+			{@const weekNumber = dayGridItems[rowIndex][0].week()}
 			<div class="contents">
-				<time id="week-row-{rowIndex}" class="sr-only">
-					{`Week ${dayGridItems[rowIndex][0].week()}`}
+				<time id="week-row-{rowIndex}" datetime={`${yearNumber}-W${weekNumber}`} class="sr-only">
+					Week {weekNumber} of {yearNumber}
 				</time>
 				{#each dayNames as _, columnIndex}
 					{@const dayGridItem = dayGridItems[rowIndex][columnIndex]}
