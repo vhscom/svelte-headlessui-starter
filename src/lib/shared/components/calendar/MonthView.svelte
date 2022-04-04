@@ -17,8 +17,6 @@
 
 	$: cursor = dayjs();
 	$: dayGridItems = Array.from(getDayGridForMonth(cursor, weeksToShow).values());
-	$: startOfMonth = cursor.startOf('month');
-	$: startOfNextMonth = cursor.endOf('month').add(1, 'day');
 
 	const dayNames = getDayGridColumnHeaders();
 	const gridRows = Array.from({ length: weeksToShow }, (_, idx) => idx);
@@ -27,8 +25,10 @@
 	const isLastColumn = (column: number) => column === 6;
 	const isFirstColumn = (column: number) => column === 0;
 
-	const isDateInMonth = (date: Dayjs) => date.isBetween(startOfMonth, startOfNextMonth);
 	const isToday = (date: Dayjs) => date.isSame(dayjs(), 'day');
+	const isCurrentMonth = (date: Dayjs) => {
+		return date.isBetween(cursor.startOf('month').subtract(1, 'day'), cursor.endOf('month'));
+	};
 
 	const handlePreviousButtonClick = () => (cursor = cursor.subtract(1, 'month'));
 	const handleTodayButtonClick = () => (cursor = dayjs());
@@ -117,7 +117,7 @@
 							!isLastRow(rowIndex) && 'border-b dark:border-gray-700',
 							isLastRow(rowIndex) && isFirstColumn(columnIndex) && 'rounded-bl-lg',
 							isLastRow(rowIndex) && isLastColumn(columnIndex) && 'rounded-br-lg',
-							!isDateInMonth(dayGridItem) && 'bg-gray-50 dark:bg-gray-900/50 text-gray-500'
+							!isCurrentMonth(dayGridItem) && 'bg-gray-50 dark:bg-gray-900/50 text-gray-500'
 						)}
 					>
 						<div class="w-full my-2.5 mx-2.5 text-xs text-right sm:text-left">
