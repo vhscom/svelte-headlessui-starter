@@ -1,6 +1,6 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.6.3",
+	"version": "0.7.0",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
@@ -53,6 +53,7 @@
 		"autoprefixer": "^10.4.4",
 		"cookie": "^0.4.2",
 		"cssnano": "^5.1.7",
+		"dayjs": "^1.11.0",
 		"dotenv": "^16.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.5.0",

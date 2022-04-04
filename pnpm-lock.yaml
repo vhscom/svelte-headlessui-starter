@@ -18,6 +18,7 @@ specifiers:
   autoprefixer: ^10.4.4
   cookie: ^0.4.2
   cssnano: ^5.1.7
+  dayjs: ^1.11.0
   dotenv: ^16.0.0
   eslint: ^7.32.0
   eslint-config-prettier: ^8.5.0
@@ -56,6 +57,7 @@ devDependencies:
   autoprefixer: 10.4.4_postcss@8.4.12
   cookie: 0.4.2
   cssnano: 5.1.7_postcss@8.4.12
+  dayjs: 1.11.0
   dotenv: 16.0.0
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
@@ -1876,6 +1878,10 @@ packages:
     dependencies:
       es5-ext: 0.10.59
       type: 1.2.0
+    dev: true
+
+  /dayjs/1.11.0:
+    resolution: {integrity: sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==}
     dev: true
 
   /debug/2.6.9:
