@@ -57,6 +57,7 @@ The application structure is as follows:
 │   │   ├── shared
 │   │   │   ├── components
 │   │   │   │   ├── auth
+│   │   │   │   ├── calendar
 │   │   │   │   ├── form
 │   │   │   │   ├── meta
 │   │   │   │   └── navigation
