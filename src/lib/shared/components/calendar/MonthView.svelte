@@ -1,7 +1,7 @@
 <script lang="ts">
-	import dayjs, { Dayjs } from 'dayjs';
-	import weekOfYear from 'dayjs/plugin/weekOfYear';
-	import isBetween from 'dayjs/plugin/isBetween';
+	import dayjs, { type Dayjs } from 'dayjs';
+	import weekOfYear from 'dayjs/plugin/weekOfYear.js';
+	import isBetween from 'dayjs/plugin/isBetween.js';
 	dayjs.extend(weekOfYear);
 	dayjs.extend(isBetween);
 
