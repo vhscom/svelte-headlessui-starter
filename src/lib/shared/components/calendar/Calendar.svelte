@@ -9,13 +9,21 @@
 
 	let cursor = dayjs();
 	let today = dayjs();
+	let todayPing = false;
 
-	const handleCursorChange = ({ detail }) => (cursor = detail);
+	const handleCursorChange = ({ detail }) => {
+		if (detail === today) {
+			todayPing = true;
+			setTimeout(() => (todayPing = false), 700);
+		}
+
+		return (cursor = detail);
+	};
 </script>
 
 <CalendarView {initialView} let:view>
 	<HeaderToolbar {cursor} {today} on:cursorChange={handleCursorChange} />
 	{#if view === 'dayGridView'}
-		<DayGrid {cursor} {today} />
+		<DayGrid {cursor} {today} {todayPing} />
 	{/if}
 </CalendarView>

@@ -12,6 +12,7 @@
 
 	export let cursor: Dayjs;
 	export let today: Dayjs;
+	export let todayPing: boolean;
 
 	$: dayGridItems = Array.from(getDayGridForMonth(cursor, weeksToShow).values());
 
@@ -69,10 +70,21 @@
 				>
 					<div class="my-2.5 mx-2.5 w-full text-right text-xs sm:text-left">
 						{#if isToday(dayGridItem)}
-							<div
-								class="-m-1 inline-flex h-6 w-6 items-center rounded-full bg-indigo-600 text-center font-semibold text-white"
-							>
-								<span class="w-full">{dayGridItem.format('D')}</span>
+							<div class="relative inline-flex h-5 w-5 sm:h-6 sm:w-6">
+								<div
+									class={classes(
+										'absolute inset-0 ml-1.5 sm:-ml-0.5 -mt-0.5 sm:-mt-1 w-full h-full rounded-full bg-indigo-600'
+									)}
+								/>
+								<div
+									class={classes(
+										'absolute inset-0 ml-1.5 sm:-ml-0.5 -mt-0.5 sm:-mt-1 w-full h-full rounded-full bg-indigo-600',
+										todayPing && 'animate-ping'
+									)}
+								/>
+								<span class="absolute inset-0 ml-1.5 font-semibold text-white">
+									{dayGridItem.format('D')}
+								</span>
 							</div>
 						{:else}
 							{dayGridItem.format('D')}
