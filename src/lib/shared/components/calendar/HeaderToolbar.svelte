@@ -19,50 +19,50 @@
 </script>
 
 <header
-	class="flex items-center border dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 border-b-0 rounded-t-lg py-5 px-6"
+	class="flex items-center rounded-t-lg border border-b-0 bg-gray-50 py-5 px-6 dark:border-gray-700 dark:bg-gray-800/50"
 >
-	<h1 class="text-lg flex-1 font-bold">
+	<h1 class="flex-1 text-lg font-bold">
 		<time datetime={`${cursor.year()}-${cursor.format('MM')}`}>{cursor.format('MMMM YYYY')}</time>
 	</h1>
-	<div class="flex space-x-6 sm:space-x-3 items-center">
+	<div class="flex items-center space-x-6 sm:space-x-3">
 		<div
-			class="flex items-center border border-gray-300 dark:border-gray-600 shadow-sm bg-white dark:bg-gray-800 rounded-md"
+			class="flex items-center rounded-md border border-gray-300 bg-white shadow-sm dark:border-gray-600 dark:bg-gray-800"
 		>
 			<button
-				class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-700"
+				class="rounded-l-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handlePreviousButtonClick}
 			>
 				<span class="sr-only">View previous month</span>
 				<ChevronLeftIcon class="h-4 w-4" />
 			</button>
 			<button
-				class="hidden sm:flex hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-700"
+				class="hidden px-4 py-1 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white sm:flex"
 				on:click={handleTodayButtonClick}
 			>
 				Today
 			</button>
 			<button
-				class="hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2.5 rounded-r-md focus:outline-none focus:ring-2 focus:ring-indigo-700"
+				class="rounded-r-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handleNextButtonClick}
 			>
 				<span class="sr-only">View next month</span>
 				<ChevronRightIcon class="h-4 w-4" />
 			</button>
 		</div>
-		<button class="sm:hidden cursor-not-allowed" disabled>
+		<button class="cursor-not-allowed sm:hidden" disabled>
 			<DotsHorizontalIcon />
 		</button>
 		<button
 			disabled
-			class="hidden sm:flex cursor-not-allowed items-center border border-gray-300 dark:border-gray-600 shadow-sm bg-white dark:bg-gray-800 py-1 px-4 rounded-md"
+			class="hidden cursor-not-allowed items-center rounded-md border border-gray-300 bg-white py-1 px-4 shadow-sm dark:border-gray-600 dark:bg-gray-800 sm:flex"
 		>
-			Month view <ChevronDownIcon class="h-4 w-4 ml-3" />
+			Month view <ChevronDownIcon class="ml-3 h-4 w-4" />
 		</button>
-		<div class="hidden sm:flex items-center">
-			<span class="border-l border-gray-300 dark:border-gray-600 w-1 h-6 mr-5 ml-3" />
+		<div class="hidden items-center sm:flex">
+			<span class="mr-5 ml-3 h-6 w-1 border-l border-gray-300 dark:border-gray-600" />
 			<button
 				disabled
-				class="bg-indigo-600 shadow-sm cursor-not-allowed py-1 px-4 rounded-md text-white"
+				class="cursor-not-allowed rounded-md bg-indigo-600 py-1 px-4 text-white shadow-sm"
 			>
 				Add event
 			</button>

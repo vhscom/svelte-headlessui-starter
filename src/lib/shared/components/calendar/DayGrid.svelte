@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="w-full grid bg-white dark:bg-gray-800 border border-y-gray-300 dark:border-y-gray-600 dark:border-x-gray-700 text-center items-center grid-cols-7"
+	class="grid w-full grid-cols-7 items-center border border-y-gray-300 bg-white text-center dark:border-y-gray-600 dark:border-x-gray-700 dark:bg-gray-800"
 >
 	{#each dayNames as dayName, idx}
 		<span
@@ -44,7 +44,7 @@
 	{/each}
 </div>
 <div
-	class="w-full grid border dark:border-gray-700 border-t-0 bg-white dark:bg-gray-800 rounded-b-lg grid-cols-7 grid-rows-6"
+	class="grid w-full grid-cols-7 grid-rows-6 rounded-b-lg border border-t-0 bg-white dark:border-gray-700 dark:bg-gray-800"
 >
 	{#each gridRows as _, rowIndex}
 		{@const yearNumber = dayGridItems[rowIndex][0].year()}
@@ -67,10 +67,10 @@
 						!isCurrentMonth(dayGridItem) && 'bg-gray-50 dark:bg-gray-900/50 text-gray-500'
 					)}
 				>
-					<div class="w-full my-2.5 mx-2.5 text-xs text-right sm:text-left">
+					<div class="my-2.5 mx-2.5 w-full text-right text-xs sm:text-left">
 						{#if isToday(dayGridItem)}
 							<div
-								class="bg-indigo-600 -m-1 inline-flex items-center text-center text-white font-semibold rounded-full w-6 h-6"
+								class="-m-1 inline-flex h-6 w-6 items-center rounded-full bg-indigo-600 text-center font-semibold text-white"
 							>
 								<span class="w-full">{dayGridItem.format('D')}</span>
 							</div>
