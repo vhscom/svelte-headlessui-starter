@@ -1,7 +1,7 @@
 <script lang="ts">
-	import MonthView from '$components/calendar/MonthView.svelte';
+	import { Calendar } from '$components/calendar';
 </script>
 
 <p>Example content for the calendar page.</p>
 
-<MonthView />
+<Calendar initialView="dayGridView" />
