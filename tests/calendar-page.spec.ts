@@ -1,4 +1,4 @@
-import { expect, type Locator, test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
 	await page.goto('/calendar');
@@ -76,5 +76,16 @@ test.describe('Calendar component', () => {
 		await nextButton.click({ clickCount: 2 });
 		await todayButton.click();
 		expect(await page.textContent('section.not-prose h1')).toContain(`${monthText} ${yearText}`);
+	});
+
+	test('shows accessible dropdown menu on small screens', async ({ page }) => {
+		await page.setViewportSize({ width: 375, height: 667 });
+
+		const menuButton = page.locator('section.not-prose [aria-haspopup="true"]');
+		const expanded = menuButton.getAttribute('aria-expanded');
+		expect(await expanded).toBe('false');
+
+		await menuButton.click();
+		expect(await menuButton.getAttribute('aria-expanded')).toBe('true');
 	});
 });
