@@ -4,5 +4,5 @@
 </script>
 
 <section class="not-prose">
-	<slot view={currentView} />
+	<slot selected={currentView} />
 </section>

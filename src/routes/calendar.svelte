@@ -4,4 +4,4 @@
 
 <p>Example content for the calendar page.</p>
 
-<Calendar initialView="dayGridView" />
+<Calendar initialView="dayGridView" hideOutsideDates={false} />

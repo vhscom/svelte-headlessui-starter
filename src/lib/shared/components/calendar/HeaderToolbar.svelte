@@ -10,9 +10,6 @@
 	import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
 	import DotsHorizontalIcon from '~icons/heroicons-outline/dots-horizontal';
 
-	import TemplateIcon from '~icons/heroicons-outline/template';
-	import PencilIcon from '~icons/heroicons-outline/pencil';
-
 	export let cursor: Dayjs;
 	export let today: Dayjs;
 

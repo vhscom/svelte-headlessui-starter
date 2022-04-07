@@ -2,28 +2,30 @@
 	import dayjs from 'dayjs';
 
 	import HeaderToolbar from './HeaderToolbar.svelte';
-	import DayGrid from './DayGrid.svelte';
-	import CalendarView from './CalendarView.svelte';
+	import { DayGrid } from './DayGrid';
+	import SelectedView from './SelectedView.svelte';
 
-	export let initialView = 'dayGridView';
+	export let initialView: string;
+	export let hideOutsideDates = false;
 
 	let cursor = dayjs();
 	let today = dayjs();
 	let todayPing = false;
 
-	const handleCursorChange = ({ detail }) => {
-		if (detail === today) {
-			todayPing = true;
-			setTimeout(() => (todayPing = false), 700);
-		}
+	const pingTodayIndicator = () => {
+		todayPing = true;
+		setTimeout(() => (todayPing = false), 700);
+	};
 
+	const handleCursorChange = ({ detail }) => {
+		if (detail === today) pingTodayIndicator();
 		return (cursor = detail);
 	};
 </script>
 
-<CalendarView {initialView} let:view>
+<SelectedView {initialView} let:selected>
 	<HeaderToolbar {cursor} {today} on:cursorChange={handleCursorChange} />
-	{#if view === 'dayGridView'}
-		<DayGrid {cursor} {today} {todayPing} />
+	{#if selected === 'dayGridView'}
+		<DayGrid {cursor} {today} {todayPing} {hideOutsideDates} />
 	{/if}
-</CalendarView>
+</SelectedView>

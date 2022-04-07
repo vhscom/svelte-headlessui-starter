@@ -2,10 +2,6 @@ import dayjs, { type Dayjs } from 'dayjs';
 import weekOfYear from 'dayjs/plugin/weekOfYear.js';
 dayjs.extend(weekOfYear);
 
-export const getDayGridColumnHeaders = () => {
-	return [...Array(7).keys()].map((d) => dayjs().day(d).format('ddd'));
-};
-
 export const getDayGridForMonth = (date: Dayjs = dayjs(), weeksToShow = 6) => {
 	const startOfMonth = date.startOf('month');
 	const startOfGrid = startOfMonth.subtract(startOfMonth.day(), 'day');
