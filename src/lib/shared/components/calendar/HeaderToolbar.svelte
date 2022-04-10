@@ -18,6 +18,20 @@
 	const handlePreviousButtonClick = () => dispatch('cursorChange', cursor.subtract(1, 'month'));
 	const handleTodayButtonClick = () => dispatch('cursorChange', today);
 	const handleNextButtonClick = () => dispatch('cursorChange', cursor.add(1, 'month'));
+
+	let previousButton: HTMLButtonElement;
+	const handlePreviousButtonKeydown = (evt: KeyboardEvent): void => {
+		evt.key === 'ArrowRight' && todayButton.focus();
+	};
+	let todayButton: HTMLButtonElement;
+	const handleTodayButtonKeydown = (evt: KeyboardEvent): void => {
+		evt.key === 'ArrowRight' && nextButton.focus();
+		evt.key === 'ArrowLeft' && previousButton.focus();
+	};
+	let nextButton: HTMLButtonElement;
+	const handleNextButtonKeydown = (evt: KeyboardEvent): void => {
+		evt.key === 'ArrowLeft' && todayButton.focus();
+	};
 </script>
 
 <header
@@ -31,21 +45,27 @@
 			class="flex items-center rounded-md border border-gray-300 bg-white shadow-sm dark:border-gray-600 dark:bg-gray-800"
 		>
 			<button
-				class="rounded-l-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				bind:this={previousButton}
+				class="rounded-l-md px-3 py-2.5 mr-0.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handlePreviousButtonClick}
+				on:keydown={handlePreviousButtonKeydown}
 			>
 				<span class="sr-only">View previous month</span>
 				<ChevronLeftIcon class="h-4 w-4" />
 			</button>
 			<button
+				bind:this={todayButton}
 				class="hidden px-1 md:px-4 py-1 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white sm:flex"
 				on:click={handleTodayButtonClick}
+				on:keydown={handleTodayButtonKeydown}
 			>
 				Today
 			</button>
 			<button
-				class="rounded-r-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				bind:this={nextButton}
+				class="rounded-r-md px-3 py-2.5 ml-0.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handleNextButtonClick}
+				on:keydown={handleNextButtonKeydown}
 			>
 				<span class="sr-only">View next month</span>
 				<ChevronRightIcon class="h-4 w-4" />
@@ -71,7 +91,7 @@
 		<!-- Calendar dropdown -->
 		<Menu class="relative sm:hidden">
 			<MenuButton
-				class="p-2 flex rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800"
+				class="p-2 flex rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-gray-800"
 			>
 				<span class="sr-only">Open calendar menu</span>
 				<DotsHorizontalIcon />
