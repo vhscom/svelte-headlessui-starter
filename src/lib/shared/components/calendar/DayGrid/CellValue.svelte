@@ -15,19 +15,17 @@
 			class="select-none py-1.5 sm:py-2.5 px-2.5 sm:px-2.5 h-full w-full text-right text-xs sm:text-left"
 		>
 			{#if isToday}
-				<div class="relative inline-flex h-5 w-5 sm:h-6 sm:w-6">
+				<div class="relative inline-flex h-5 w-5 sm:h-6 sm:w-6 -mt-0.5 -mr-1 sm:-mt-1 sm:-ml-1">
+					<div class="absolute w-full h-full rounded-full bg-indigo-600" />
 					<div
 						class={classes(
-							'absolute inset-0 ml-1.5 sm:-ml-0.5 -mt-0.5 sm:-mt-1 w-full h-full rounded-full bg-indigo-600'
-						)}
-					/>
-					<div
-						class={classes(
-							'absolute inset-0 ml-1.5 sm:-ml-0.5 -mt-0.5 sm:-mt-1 w-full h-full rounded-full bg-indigo-600',
+							'absolute w-full h-full rounded-full bg-indigo-600',
 							todayPing && 'animate-ping'
 						)}
 					/>
-					<span class="absolute inset-0 ml-1.5 font-semibold text-white">
+					<span
+						class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium sm:font-semibold text-white"
+					>
 						{value.format('D')}
 					</span>
 				</div>
