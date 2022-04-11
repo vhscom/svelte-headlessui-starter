@@ -32,7 +32,7 @@
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 				<DisclosureButton
-					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-inset focus:ring-offset-gray-800"
+					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-700 focus:ring-offset-gray-800"
 				>
 					<span class="sr-only">Open main menu</span>
 					{#if !open}

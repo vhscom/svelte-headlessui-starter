@@ -32,6 +32,8 @@
 	const handleNextButtonKeydown = (evt: KeyboardEvent): void => {
 		evt.key === 'ArrowLeft' && todayButton.focus();
 	};
+
+	const handleAddEventClick = () => dispatch('addEventClick');
 </script>
 
 <header
@@ -46,7 +48,7 @@
 		>
 			<button
 				bind:this={previousButton}
-				class="rounded-l-md px-3 py-2.5 mr-0.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				class="mr-0.5 rounded-l-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handlePreviousButtonClick}
 				on:keydown={handlePreviousButtonKeydown}
 			>
@@ -55,7 +57,7 @@
 			</button>
 			<button
 				bind:this={todayButton}
-				class="hidden px-1 md:px-4 py-1 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white sm:flex"
+				class="hidden px-1 py-1 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white sm:flex md:px-4"
 				on:click={handleTodayButtonClick}
 				on:keydown={handleTodayButtonKeydown}
 			>
@@ -63,7 +65,7 @@
 			</button>
 			<button
 				bind:this={nextButton}
-				class="rounded-r-md px-3 py-2.5 ml-0.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				class="ml-0.5 rounded-r-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handleNextButtonClick}
 				on:keydown={handleNextButtonKeydown}
 			>
@@ -81,8 +83,8 @@
 		<div class="hidden items-center sm:flex">
 			<span class="mr-5 ml-2 h-6 w-1 border-l border-gray-300 dark:border-gray-600" />
 			<button
-				disabled
-				class="cursor-not-allowed rounded-md bg-indigo-600 py-1 px-4 text-white shadow-sm"
+				on:click={handleAddEventClick}
+				class="rounded-md bg-indigo-600 py-1 px-4 text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
 			>
 				Add event
 			</button>
@@ -91,7 +93,7 @@
 		<!-- Calendar dropdown -->
 		<Menu class="relative sm:hidden">
 			<MenuButton
-				class="p-2 flex rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-gray-800"
+				class="flex rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-gray-800"
 			>
 				<span class="sr-only">Open calendar menu</span>
 				<DotsHorizontalIcon />
@@ -107,8 +109,21 @@
 				leaveTo="transform opacity-0 scale-95"
 			>
 				<MenuItems
-					class="absolute z-10 right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900"
+					class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900"
 				>
+					<MenuItem
+						let:disabled
+						on:click={handleAddEventClick}
+						class={({ active }) =>
+							classes(
+								active ? 'bg-gray-100 dark:bg-gray-800' : '',
+								'text-sm text-gray-700 dark:text-white'
+							)}
+					>
+						<span class={classes('block px-4 py-2', disabled && 'cursor-not-allowed opacity-20')}>
+							Add event
+						</span>
+					</MenuItem>
 					<MenuItem
 						on:click={handleTodayButtonClick}
 						class={({ active }) =>
@@ -130,19 +145,6 @@
 					>
 						<span class={classes('block px-4 py-2', disabled && 'cursor-not-allowed opacity-20')}>
 							Weekly view
-						</span>
-					</MenuItem>
-					<MenuItem
-						disabled
-						let:disabled
-						class={({ active }) =>
-							classes(
-								active ? 'bg-gray-100 dark:bg-gray-800' : '',
-								'text-sm text-gray-700 dark:text-white'
-							)}
-					>
-						<span class={classes('block px-4 py-2', disabled && 'cursor-not-allowed opacity-20')}>
-							Add event
 						</span>
 					</MenuItem>
 				</MenuItems>
