@@ -7,6 +7,11 @@ const config = {
 
 	theme: {
 		extend: {
+			colors: {
+				gray: {
+					850: '#18202f'
+				}
+			},
 			fontFamily: {
 				sans: ['Inter var', ...defaultTheme.fontFamily.sans]
 			}

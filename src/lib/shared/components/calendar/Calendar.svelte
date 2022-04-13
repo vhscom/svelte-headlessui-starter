@@ -1,11 +1,13 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
 
+	import type { CalendarEventModel } from '$models/classes/calendar-event.model';
 	import HeaderToolbar from './HeaderToolbar.svelte';
 	import { DayGrid } from './DayGrid';
 	import SelectedView from './SelectedView.svelte';
 	import AddEventDialog from './AddEventDialog.svelte';
 
+	export let calendarEvents: CalendarEventModel[];
 	export let initialView: string;
 	export let hideOutsideDates = false;
 
@@ -35,7 +37,7 @@
 		on:addEventClick={handleAddEventClick}
 	/>
 	{#if selected === 'dayGridView'}
-		<DayGrid {cursor} {today} {todayPing} {hideOutsideDates} />
+		<DayGrid {calendarEvents} {cursor} {today} {todayPing} {hideOutsideDates} />
 	{/if}
 	<AddEventDialog bind:isOpen={isAddingEvent} />
 </SelectedView>

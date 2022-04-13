@@ -5,6 +5,8 @@
 	dayjs.extend(weekOfYear);
 	dayjs.extend(isBetween);
 
+	import type { CalendarEventModel } from '$models/classes/calendar-event.model';
+
 	import { getDayGridForMonth } from '$utils/date';
 	import GridHeader from './GridHeader.svelte';
 	import GridCell from './GridCell.svelte';
@@ -14,6 +16,8 @@
 	export let today: Dayjs;
 	export let todayPing: boolean;
 	export let hideOutsideDates: boolean;
+
+	export let calendarEvents: CalendarEventModel[];
 
 	const weeksToShow = 6;
 
@@ -52,6 +56,7 @@
 					{today}
 				>
 					<CellValue
+						{calendarEvents}
 						value={dayOfWeek}
 						{descriptor}
 						{todayPing}

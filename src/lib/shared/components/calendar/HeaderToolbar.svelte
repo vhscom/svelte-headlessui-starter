@@ -37,7 +37,7 @@
 </script>
 
 <header
-	class="flex items-center rounded-t-lg border border-b-0 bg-gray-50 py-5 px-6 dark:border-gray-700 dark:bg-gray-800/50"
+	class="flex items-center rounded-t-lg border border-b-0 bg-gray-50 py-5 px-6 dark:border-gray-700 dark:bg-gray-850"
 >
 	<h1 class="flex-1 text-lg font-bold">
 		<time datetime={`${cursor.year()}-${cursor.format('MM')}`}>{cursor.format('MMMM YYYY')}</time>
@@ -48,7 +48,7 @@
 		>
 			<button
 				bind:this={previousButton}
-				class="mr-0.5 rounded-l-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				class="mr-0.5 rounded-l-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handlePreviousButtonClick}
 				on:keydown={handlePreviousButtonKeydown}
 			>
@@ -57,7 +57,7 @@
 			</button>
 			<button
 				bind:this={todayButton}
-				class="hidden px-1 py-1 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white sm:flex md:px-4"
+				class="hidden px-1 py-1 hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-gray-700 dark:hover:text-white sm:flex md:px-4"
 				on:click={handleTodayButtonClick}
 				on:keydown={handleTodayButtonKeydown}
 			>
@@ -65,7 +65,7 @@
 			</button>
 			<button
 				bind:this={nextButton}
-				class="ml-0.5 rounded-r-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white"
+				class="ml-0.5 rounded-r-md px-3 py-2.5 hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-gray-700 dark:hover:text-white"
 				on:click={handleNextButtonClick}
 				on:keydown={handleNextButtonKeydown}
 			>
