@@ -5,7 +5,7 @@
 	import HeaderToolbar from './HeaderToolbar.svelte';
 	import { DayGrid } from './DayGrid';
 	import SelectedView from './SelectedView.svelte';
-	import AddEventDialog from './AddEventDialog.svelte';
+	import { AddEventDialog } from './AddEventDialog';
 
 	export let calendarEvents: CalendarEventModel[];
 	export let initialView: string;
