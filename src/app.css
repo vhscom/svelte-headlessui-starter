@@ -16,7 +16,7 @@
 		}
 
 		&:disabled {
-			@apply cursor-not-allowed bg-opacity-25 hover:bg-opacity-25;
+			@apply opacity-50 cursor-wait;
 		}
 
 		svg {

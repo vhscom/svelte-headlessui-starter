@@ -45,11 +45,11 @@
 				>
 					<div class="ml-10">
 						<DialogTitle class="text-lg font-medium leading-6">Add event</DialogTitle>
-						<DialogDescription class="text-gray-500 dark:text-gray-400"
-							>Create a new calendar event.</DialogDescription
-						>
+						<DialogDescription class="text-gray-500 dark:text-gray-400">
+							Create a new calendar event.
+						</DialogDescription>
 					</div>
-					<EventInputForm on:pickDay on:closeModal={() => (isOpen = false)} />
+					<EventInputForm on:eventCreated on:pickDay on:closeModal={() => (isOpen = false)} />
 				</div>
 			</TransitionChild>
 		</div>

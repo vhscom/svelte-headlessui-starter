@@ -1,22 +1,25 @@
 <script lang="ts">
-	import dayjs, { type Dayjs } from 'dayjs';
 	import { createEventDispatcher } from 'svelte';
+	import dayjs, { type Dayjs } from 'dayjs';
+	import isSameOrAfter from 'dayjs/plugin/isSameOrAfter.js';
+	dayjs.extend(isSameOrAfter);
 
 	import TagIcon from '~icons/heroicons-outline/tag';
 	import LocationMarkerIcon from '~icons/heroicons-outline/location-marker';
 	import CalendarIcon from '~icons/heroicons-outline/calendar';
 	import ClockIcon from '~icons/heroicons-outline/clock';
 
+	import type { AddEventFormData } from '$models/interfaces/calendar-event.interface';
 	import { picks, draft } from '../store';
 
-	let { start, end } = $picks;
 	let startValue: string, endValue: string;
+	let isSaving = false;
 
 	$: drafting = $draft instanceof FormData;
 	$: isAllDay = drafting ? $draft.get('allday') === 'on' : true;
 
-	$: isAllDay, (startValue = format(start));
-	$: isAllDay, (endValue = format(end));
+	$: isAllDay, (startValue = format($picks.start));
+	$: isAllDay, (endValue = format($picks.end));
 
 	const format = (input: Dayjs | null) => {
 		if (!input) return '';
@@ -24,22 +27,58 @@
 	};
 
 	const dispatch = createEventDispatcher();
-
-	const handleSaveButtonClick = () => dispatch('closeModal');
 	const handlePickButtonClick = ({ currentTarget }) => dispatch('pickDay', currentTarget);
+
 	const handleClearButtonClick = () => {
 		draft.set(null);
 		picks.set({ start: null, end: null });
 		dispatch('closeModal');
 	};
+
+	const handleDateChange = ({ currentTarget }) => {
+		picks.set({ ...$picks, [currentTarget.name]: dayjs(currentTarget.value) });
+		checkCustomValidity(currentTarget.form.end as HTMLInputElement);
+	};
+
+	const checkCustomValidity = (endInput: HTMLInputElement) => {
+		if (endInput.validity.valueMissing) return;
+
+		const startInput = endInput.form.start as HTMLInputElement;
+		endInput.value && dayjs(endInput.value).isSameOrAfter(startInput.value)
+			? endInput.setCustomValidity('')
+			: endInput.setCustomValidity('Event cannot end before it starts.');
+
+		!endInput.value && endInput.setCustomValidity('');
+		return endInput.validity.valid;
+	};
+
+	const handleFormSubmit = async (evt: SubmitEvent) => {
+		const form = evt.target as HTMLFormElement;
+
+		checkCustomValidity(form.end as HTMLInputElement);
+		if (!form.checkValidity()) return form.reportValidity();
+
+		const formData = new FormData(form) as unknown as Iterable<
+			[AddEventFormData, FormDataEntryValue]
+		>;
+		const requestData: AddEventFormData = Object.fromEntries(formData);
+
+		isSaving = true;
+		const res = await fetch('/api/events', {
+			method: 'post',
+			body: JSON.stringify(requestData)
+		});
+		dispatch('eventCreated', await res.json());
+	};
 </script>
 
-<form on:submit|preventDefault>
+<form on:submit|preventDefault={handleFormSubmit}>
 	<div class="mt-4 flex flex-col space-y-3">
 		<div class="flex flex-row items-center">
 			<TagIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
 			<label for="event-title" class="sr-only">Title</label>
 			<input
+				required
 				id="event-title"
 				class="flex-1 rounded-md"
 				name="title"
@@ -74,13 +113,14 @@
 			<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
 			<label for="event-start" class="sr-only">Start date and time</label>
 			<input
+				required
 				id="event-start"
 				class="flex-1 rounded-md"
 				name="start"
 				type={isAllDay ? 'date' : 'datetime-local'}
 				placeholder="Start"
 				value={startValue}
-				on:change={({ currentTarget: { value } }) => picks.set({ ...$picks, start: dayjs(value) })}
+				on:change={handleDateChange}
 			/>
 			<button
 				type="button"
@@ -95,13 +135,14 @@
 			<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
 			<label for="event-end" class="sr-only">End date</label>
 			<input
+				required={!isAllDay}
 				id="event-end"
 				class="flex-1 rounded-md"
 				name="end"
 				type={isAllDay ? 'date' : 'datetime-local'}
 				placeholder="End"
 				value={endValue}
-				on:change={({ currentTarget: { value } }) => picks.set({ ...$picks, end: dayjs(value) })}
+				on:change={handleDateChange}
 			/>
 			<button
 				type="button"
@@ -116,14 +157,11 @@
 		<div class="ml-8 mt-2 space-y-3 space-x-1">
 			<p class="ml-1 text-sm text-gray-400">End date optional for all-day events.</p>
 			<div class="flex flex-row items-center space-x-2">
-				<button
-					class="btn btn-primary"
-					disabled
-					type="submit"
-					on:click|preventDefault={handleSaveButtonClick}
-				>
-					Save
-				</button>
+				{#if isSaving}
+					<button disabled class="btn btn-primary justify-center" type="submit">Save</button>
+				{:else}
+					<button class="btn btn-primary justify-center" type="submit">Save</button>
+				{/if}
 				<button class="btn" type="reset" on:click={handleClearButtonClick}> Clear </button>
 			</div>
 		</div>

@@ -50,6 +50,19 @@ export const navigationData: NavItemModel[] = [
 	}
 ].map((value) => new NavItemModel().deserialize(value));
 
+export const dbCalendarData = [
+	{
+		id: 1,
+		created_at: '2022-04-14T09:33:57+00:00',
+		start_date: '2022-04-14',
+		start_time: '17:34:36+08',
+		end_date: '2022-04-14',
+		end_time: '18:34:36+08',
+		title: 'Supabase test event',
+		url: null
+	}
+];
+
 export const calendarData: CalendarEventModel[] = [
 	{
 		start: '2022-03-06T00:00:00Z'

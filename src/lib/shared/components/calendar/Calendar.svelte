@@ -2,6 +2,7 @@
 	import dayjs, { type Dayjs } from 'dayjs';
 
 	import type { CalendarEventModel } from '$models/classes/calendar-event.model';
+
 	import HeaderToolbar from './HeaderToolbar.svelte';
 	import { DayGrid } from './DayGrid';
 	import SelectedView from './SelectedView.svelte';
@@ -43,6 +44,15 @@
 		picking = null;
 		isDialogOpen = true;
 	};
+
+	const handleEventCreated = ({ detail: newEvents }) => {
+		picks.set({ start: null, end: null });
+		draft.set(null);
+		const [onlyNewEvent] = newEvents as CalendarEventModel[];
+		calendarEvents.push(onlyNewEvent);
+		isDialogOpen = false;
+		cursor = dayjs(onlyNewEvent.start);
+	};
 </script>
 
 <SelectedView {initialView} let:selected>
@@ -63,5 +73,9 @@
 			{hideOutsideDates}
 		/>
 	{/if}
-	<AddEventDialog on:pickDay={handlePickDay} bind:isOpen={isDialogOpen} />
+	<AddEventDialog
+		on:eventCreated={handleEventCreated}
+		on:pickDay={handlePickDay}
+		bind:isOpen={isDialogOpen}
+	/>
 </SelectedView>
