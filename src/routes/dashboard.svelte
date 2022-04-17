@@ -49,6 +49,7 @@
 	];
 </script>
 
+<p>Template designed to make it faster and easier to build libre Svelte apps using Headless UI.</p>
 <p>Get the source code.</p>
 
 <IconButton
