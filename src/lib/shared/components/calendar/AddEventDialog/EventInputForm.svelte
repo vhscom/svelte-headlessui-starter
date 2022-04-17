@@ -6,7 +6,7 @@
 	import CalendarIcon from '~icons/heroicons-outline/calendar';
 	import ClockIcon from '~icons/heroicons-outline/clock';
 
-	let isAllDayEvent = true;
+	$: isAllDayEvent = true;
 
 	const dispatch = createEventDispatcher();
 
@@ -50,48 +50,38 @@
 			/> All day
 		</label>
 		<div class="flex flex-row items-center">
-			{#if isAllDayEvent}
-				<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
-				<label for="event-start" class="sr-only">Start date</label>
-				<input
-					id="event-start"
-					class="flex-1 rounded-md"
-					name="start"
-					type="date"
-					placeholder="Start"
-				/>
-			{:else}
-				<ClockIcon aria-hidden="true" class="w-5 h-5 mr-4 text-gray-400" />
-				<label for="event-start" class="sr-only">Start date and time</label>
-				<input
-					id="event-start"
-					class="flex-1 rounded-md"
-					name="start"
-					type="datetime-local"
-					placeholder="Start"
-				/>
-			{/if}
-			<button type="button" class="btn ml-2" on:click|preventDefault={handlePickButtonClick}>
+			<ClockIcon aria-hidden="true" class="w-5 h-5 mr-4 text-gray-400" />
+			<label for="event-start" class="sr-only">Start date and time</label>
+			<input
+				id="event-start"
+				class="flex-1 rounded-md"
+				name="start"
+				type={isAllDayEvent ? 'date' : 'datetime-local'}
+				placeholder="Start"
+			/>
+			<button
+				type="button"
+				class="btn ml-2 hidden sm:inline-flex"
+				on:click|preventDefault={handlePickButtonClick}
+			>
 				<CalendarIcon class="h-5 w-5" /> Pick
 			</button>
 		</div>
 		<div class="flex flex-row items-center">
-			{#if isAllDayEvent}
-				<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
-				<label for="event-end" class="sr-only">End date</label>
-				<input id="event-end" class="flex-1 rounded-md" name="end" type="date" placeholder="End" />
-			{:else}
-				<ClockIcon aria-hidden="true" class="w-5 h-5 mr-4 text-gray-400" />
-				<label for="event-end" class="sr-only">End date and time</label>
-				<input
-					id="event-end"
-					class="flex-1 rounded-md"
-					name="end"
-					type="datetime-local"
-					placeholder="End"
-				/>
-			{/if}
-			<button type="button" class="btn ml-2" on:click|preventDefault={handlePickButtonClick}>
+			<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
+			<label for="event-end" class="sr-only">End date</label>
+			<input
+				id="event-end"
+				class="flex-1 rounded-md"
+				name="end"
+				type={isAllDayEvent ? 'date' : 'datetime-local'}
+				placeholder="End"
+			/>
+			<button
+				type="button"
+				class="btn ml-2 hidden sm:inline-flex"
+				on:click|preventDefault={handlePickButtonClick}
+			>
 				<CalendarIcon class="h-5 w-5" /> Pick
 			</button>
 		</div>
@@ -117,6 +107,21 @@
 	input {
 		@apply bg-transparent;
 	}
+
+	input[type^='date']:not(:placeholder-shown) {
+		@apply before:content-[attr(placeholder)];
+		@apply sm:after:content-[attr(placeholder)] sm:before:hidden;
+	}
+
+	input[type^='date']::after,
+	input[type^='date']::before {
+		@apply text-gray-500;
+	}
+
+	input[type^='date']::before {
+		@apply w-10 mr-1;
+	}
+
 	::-webkit-calendar-picker-indicator {
 		@apply hidden; /* hide native picker icon */
 	}
