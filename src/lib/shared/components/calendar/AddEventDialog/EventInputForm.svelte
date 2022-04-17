@@ -71,11 +71,8 @@
 					placeholder="Start"
 				/>
 			{/if}
-			<button
-				class="ml-2 flex flex-row justify-center rounded-md border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-900 hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus-visible:ring-offset-gray-900"
-				on:click|preventDefault={handlePickButtonClick}
-			>
-				<CalendarIcon class="mr-2 h-5 w-5" /> Pick
+			<button type="button" class="btn ml-2" on:click|preventDefault={handlePickButtonClick}>
+				<CalendarIcon class="h-5 w-5" /> Pick
 			</button>
 		</div>
 		<div class="flex flex-row items-center">
@@ -94,31 +91,24 @@
 					placeholder="End"
 				/>
 			{/if}
-			<button
-				class="ml-2 flex flex-row justify-center rounded-md	border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-900 hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus-visible:ring-offset-gray-900"
-				on:click|preventDefault={handlePickButtonClick}
-			>
-				<CalendarIcon class="mr-2 h-5 w-5" /> Pick
+			<button type="button" class="btn ml-2" on:click|preventDefault={handlePickButtonClick}>
+				<CalendarIcon class="h-5 w-5" /> Pick
 			</button>
 		</div>
 
-		<div class="ml-8 mt-2 space-y-4 space-x-1">
+		<div class="ml-8 mt-2 space-y-3 space-x-1">
 			<p class="ml-1 text-sm text-gray-400">End date optional for all-day events.</p>
-			<button
-				disabled
-				type="button"
-				class="inline-flex cursor-not-allowed justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
-				on:click|preventDefault={handleCreateButtonClicked}
-			>
-				Create
-			</button>
-			<button
-				type="button"
-				class="inline-flex justify-center rounded-md border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-900 hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus-visible:ring-offset-gray-900"
-				on:click={handleCancelButtonClicked}
-			>
-				Cancel
-			</button>
+			<div class="flex flex-row items-center space-x-2">
+				<button
+					class="btn btn-primary"
+					disabled
+					type="submit"
+					on:click|preventDefault={handleCreateButtonClicked}
+				>
+					Save
+				</button>
+				<button class="btn" type="reset" on:click={handleCancelButtonClicked}> Clear </button>
+			</div>
 		</div>
 	</div>
 </form>

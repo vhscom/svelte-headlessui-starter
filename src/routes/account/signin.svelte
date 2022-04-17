@@ -5,6 +5,10 @@
 
 <p>Example content for the account sign in page.</p>
 
-<IconButton icon={GitHubIcon} href="/api/auth/signin/github?redirect=/account/profile">
+<IconButton
+	class="btn btn-primary no-underline"
+	icon={GitHubIcon}
+	href="/api/auth/signin/github?redirect=/account/profile"
+>
 	Sign in with GitHub
 </IconButton>

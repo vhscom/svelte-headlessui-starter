@@ -82,10 +82,7 @@
 		</button>
 		<div class="hidden items-center sm:flex">
 			<span class="mr-5 ml-2 h-6 w-1 border-l border-gray-300 dark:border-gray-600" />
-			<button
-				on:click={handleAddEventClick}
-				class="rounded-md bg-indigo-600 py-1 px-4 text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
-			>
+			<button type="submit" on:click={handleAddEventClick} class="btn btn-primary">
 				Add event
 			</button>
 		</div>

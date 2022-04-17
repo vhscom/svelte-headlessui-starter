@@ -29,7 +29,8 @@
 	on:click|preventDefault={handleClick}
 	on:keyup={handleKeyup}
 	{href}
-	class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium text-white no-underline hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800"
+	class="btn no-underline"
+	{...$$restProps}
 >
 	<svelte:component this={icon} class="mr-2" />
 	<slot>Button text</slot>

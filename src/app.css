@@ -4,4 +4,27 @@
 @tailwind base;
 @tailwind utilities;
 
-/* Write your global styles here, in PostCSS syntax */
+/* Write your global styles here, in PostCSS syntax (with optional nesting) */
+
+@layer components {
+	button.btn,
+	[type='button'].btn,
+	[type='reset'].btn,
+	[type='submit'].btn,
+	a[role='button'].btn {
+		@apply inline-flex items-center transition ease-in-out duration-150 rounded-md border border-transparent;
+		@apply bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-900 hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus-visible:ring-offset-gray-900;
+
+		&.btn-primary {
+			@apply bg-indigo-600 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900;
+		}
+
+		&:disabled {
+			@apply bg-opacity-25 hover:bg-opacity-25 cursor-not-allowed;
+		}
+
+		svg {
+			@apply mr-2;
+		}
+	}
+}

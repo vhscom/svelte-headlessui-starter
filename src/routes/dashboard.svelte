@@ -3,6 +3,7 @@
 	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 	import ChevronUpIcon from '~icons/heroicons-solid/chevron-up';
 	import CodebergIcon from '~icons/custom/codeberg';
+	import GitHubIcon from '~icons/cib/github';
 	import { IconButton } from '$components';
 
 	const docs = [
@@ -50,8 +51,20 @@
 
 <p>Get the source code.</p>
 
-<IconButton icon={CodebergIcon} href="https://codeberg.org/vhs/svelte-headlessui-starter">
+<IconButton
+	class="btn btn-primary no-underline mr-1"
+	icon={CodebergIcon}
+	href="https://codeberg.org/vhs/svelte-headlessui-starter"
+>
 	Download on Codeberg
+</IconButton>
+
+<IconButton
+	class="btn no-underline"
+	icon={GitHubIcon}
+	href="https://github.com/vhscom/svelte-headlessui-starter"
+>
+	Star on GitHub
 </IconButton>
 
 <p>Access frequently used documentation.</p>
