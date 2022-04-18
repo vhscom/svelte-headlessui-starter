@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-	import type { ErrorLoad } from '@sveltejs/kit';
+	import type { Load } from '@sveltejs/kit';
 
-	export const load: ErrorLoad = ({ error, status }) => {
+	export const load: Load = ({ error, status }) => {
 		const message = error.message.replace(/:(.*?)$/, '');
 
 		return { props: { status, message } };
