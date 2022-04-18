@@ -41,7 +41,7 @@
 	<div class="pointer-events-none absolute inset-0">
 		<div
 			class={classes(
-				'pointer-events-none absolute inset-x-0 bottom-0 flex h-4 bg-gradient-to-t to-transparent',
+				'pointer-events-none hidden md:flex absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t to-transparent',
 				isCurrentMonth(dayOfWeek) && !hilightOnHover && 'from-white dark:from-gray-800/80',
 				!isCurrentMonth(dayOfWeek) && !hilightOnHover && 'from-gray-50 dark:from-gray-850'
 			)}

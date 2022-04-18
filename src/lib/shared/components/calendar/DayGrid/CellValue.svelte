@@ -52,7 +52,9 @@
 	</time>
 
 	{#if eventsForDay.length !== 0}
-		<dl class="-mt-1.5 flex space-y-1.5 px-2.5 text-xs sm:-mt-1 md:mt-1 md:flex-col">
+		<dl
+			class="absolute top-6 sm:top-9 md:top-8 inset-x-0 flex space-y-1.5 px-2.5 text-xs sm:-mt-1 md:mt-1 md:flex-col"
+		>
 			{#each eventsForDay as { title, start }}
 				{@const startTime = dayjs(start)}
 				{@const eventTitle = title ? title : 'Untitled event'}
