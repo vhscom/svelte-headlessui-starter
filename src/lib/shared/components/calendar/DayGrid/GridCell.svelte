@@ -9,6 +9,7 @@
 	export let today: Dayjs;
 	export let lastRowIndex: number;
 	export let lastColumnIndex: number;
+	export let hilightOnHover: boolean;
 
 	const isFirstRow = (column: number) => column === 0;
 	const isLastColumn = (column: number) => column === lastColumnIndex;
@@ -27,7 +28,9 @@
 		!isLastRow(rowIndex) && 'border-b dark:border-gray-700',
 		isLastRow(rowIndex) && isFirstRow(columnIndex) && 'rounded-bl-lg',
 		isLastRow(rowIndex) && isLastColumn(columnIndex) && 'rounded-br-lg',
-		!isCurrentMonth(dayOfWeek) && 'bg-gray-50 dark:bg-gray-850 text-gray-500'
+		!isCurrentMonth(dayOfWeek) && 'bg-gray-50 dark:bg-gray-850 text-gray-500',
+		hilightOnHover &&
+			'hover:bg-gray-100 hover:dark:bg-gray-700 cursor-pointer transition ease-in-out duration-75'
 	)}
 >
 	<slot
@@ -39,8 +42,8 @@
 		<div
 			class={classes(
 				'pointer-events-none absolute inset-x-0 bottom-0 flex h-4 bg-gradient-to-t to-transparent',
-				isCurrentMonth(dayOfWeek) && 'from-white dark:from-gray-800/80',
-				!isCurrentMonth(dayOfWeek) && 'from-gray-50 dark:from-gray-850'
+				isCurrentMonth(dayOfWeek) && !hilightOnHover && 'from-white dark:from-gray-800/80',
+				!isCurrentMonth(dayOfWeek) && !hilightOnHover && 'from-gray-50 dark:from-gray-850'
 			)}
 		/>
 	</div>

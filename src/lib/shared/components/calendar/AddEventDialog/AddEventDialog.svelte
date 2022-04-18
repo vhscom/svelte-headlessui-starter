@@ -49,7 +49,7 @@
 							>Create a new calendar event.</DialogDescription
 						>
 					</div>
-					<EventInputForm on:closeModal={() => (isOpen = false)} />
+					<EventInputForm on:pickDay on:closeModal={() => (isOpen = false)} />
 				</div>
 			</TransitionChild>
 		</div>

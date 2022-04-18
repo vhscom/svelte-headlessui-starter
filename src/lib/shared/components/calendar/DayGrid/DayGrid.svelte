@@ -16,6 +16,7 @@
 	export let today: Dayjs;
 	export let todayPing: boolean;
 	export let hideOutsideDates: boolean;
+	export let picking: string | null;
 
 	export let calendarEvents: CalendarEventModel[];
 
@@ -44,6 +45,7 @@
 			</time>
 			{#each daysOfWeek as dayOfWeek, columnIndex}
 				<GridCell
+					hilightOnHover={!!picking}
 					let:isCurrentMonth
 					let:descriptor
 					let:isToday
@@ -62,6 +64,7 @@
 						{todayPing}
 						{isToday}
 						shouldHideValue={hideOutsideDates && !isCurrentMonth}
+						on:dayClick
 					/>
 				</GridCell>
 			{/each}

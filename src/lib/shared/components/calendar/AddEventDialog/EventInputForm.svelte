@@ -1,4 +1,5 @@
 <script lang="ts">
+	import dayjs, { type Dayjs } from 'dayjs';
 	import { createEventDispatcher } from 'svelte';
 
 	import TagIcon from '~icons/heroicons-outline/tag';
@@ -6,13 +7,31 @@
 	import CalendarIcon from '~icons/heroicons-outline/calendar';
 	import ClockIcon from '~icons/heroicons-outline/clock';
 
-	$: isAllDayEvent = true;
+	import { picks, draft } from '../store';
+
+	let { start, end } = $picks;
+	let startValue: string, endValue: string;
+
+	$: drafting = $draft instanceof FormData;
+	$: isAllDay = drafting ? $draft.get('allday') === 'on' : true;
+
+	$: isAllDay, (startValue = format(start));
+	$: isAllDay, (endValue = format(end));
+
+	const format = (input: Dayjs | null) => {
+		if (!input) return '';
+		return isAllDay ? input.format('YYYY-MM-DD') : input.format('YYYY-MM-DDTHH:mm');
+	};
 
 	const dispatch = createEventDispatcher();
 
-	const handleCreateButtonClicked = () => dispatch('closeModal');
-	const handlePickButtonClick = () => dispatch('closeModal');
-	const handleCancelButtonClicked = () => dispatch('closeModal');
+	const handleSaveButtonClick = () => dispatch('closeModal');
+	const handlePickButtonClick = ({ currentTarget }) => dispatch('pickDay', currentTarget);
+	const handleClearButtonClick = () => {
+		draft.set(null);
+		picks.set({ start: null, end: null });
+		dispatch('closeModal');
+	};
 </script>
 
 <form on:submit|preventDefault>
@@ -26,6 +45,7 @@
 				name="title"
 				type="text"
 				placeholder="Title"
+				value={drafting ? $draft.get('title') : ''}
 			/>
 		</div>
 		<div class="flex flex-row items-center">
@@ -37,6 +57,7 @@
 				name="location"
 				type="text"
 				placeholder="Location"
+				value={drafting ? $draft.get('location') : ''}
 			/>
 		</div>
 		<label class="ml-10">
@@ -45,8 +66,8 @@
 				class="mr-1 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus:ring-offset-gray-900"
 				type="checkbox"
 				name="allday"
-				checked={isAllDayEvent}
-				on:click={({ currentTarget: { checked } }) => (isAllDayEvent = checked)}
+				checked={isAllDay}
+				on:change={({ currentTarget: { checked } }) => (isAllDay = checked)}
 			/> All day
 		</label>
 		<div class="flex flex-row items-center">
@@ -56,11 +77,14 @@
 				id="event-start"
 				class="flex-1 rounded-md"
 				name="start"
-				type={isAllDayEvent ? 'date' : 'datetime-local'}
+				type={isAllDay ? 'date' : 'datetime-local'}
 				placeholder="Start"
+				value={startValue}
+				on:change={({ currentTarget: { value } }) => picks.set({ ...$picks, start: dayjs(value) })}
 			/>
 			<button
 				type="button"
+				name="pick-start"
 				class="btn ml-2 hidden sm:inline-flex"
 				on:click|preventDefault={handlePickButtonClick}
 			>
@@ -74,11 +98,14 @@
 				id="event-end"
 				class="flex-1 rounded-md"
 				name="end"
-				type={isAllDayEvent ? 'date' : 'datetime-local'}
+				type={isAllDay ? 'date' : 'datetime-local'}
 				placeholder="End"
+				value={endValue}
+				on:change={({ currentTarget: { value } }) => picks.set({ ...$picks, end: dayjs(value) })}
 			/>
 			<button
 				type="button"
+				name="pick-end"
 				class="btn ml-2 hidden sm:inline-flex"
 				on:click|preventDefault={handlePickButtonClick}
 			>
@@ -93,11 +120,11 @@
 					class="btn btn-primary"
 					disabled
 					type="submit"
-					on:click|preventDefault={handleCreateButtonClicked}
+					on:click|preventDefault={handleSaveButtonClick}
 				>
 					Save
 				</button>
-				<button class="btn" type="reset" on:click={handleCancelButtonClicked}> Clear </button>
+				<button class="btn" type="reset" on:click={handleClearButtonClick}> Clear </button>
 			</div>
 		</div>
 	</div>
