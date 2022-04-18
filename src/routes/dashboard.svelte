@@ -53,7 +53,7 @@
 <p>Get the source code.</p>
 
 <IconButton
-	class="btn btn-primary no-underline mr-1"
+	class="btn btn-primary mr-1 no-underline"
 	icon={CodebergIcon}
 	href="https://codeberg.org/vhs/svelte-headlessui-starter"
 >

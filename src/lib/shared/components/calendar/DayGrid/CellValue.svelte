@@ -53,7 +53,7 @@
 
 	{#if eventsForDay.length !== 0}
 		<dl
-			class="absolute top-6 sm:top-9 md:top-8 inset-x-0 flex space-y-1.5 px-2.5 text-xs sm:-mt-1 md:mt-1 md:flex-col"
+			class="absolute inset-x-0 top-6 flex space-y-1.5 px-2.5 text-xs sm:top-9 sm:-mt-1 md:top-8 md:mt-1 md:flex-col"
 		>
 			{#each eventsForDay as { title, start }}
 				{@const startTime = dayjs(start)}

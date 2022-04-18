@@ -71,7 +71,7 @@
 			/> All day
 		</label>
 		<div class="flex flex-row items-center">
-			<ClockIcon aria-hidden="true" class="w-5 h-5 mr-4 text-gray-400" />
+			<ClockIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
 			<label for="event-start" class="sr-only">Start date and time</label>
 			<input
 				id="event-start"
@@ -137,7 +137,7 @@
 
 	input[type^='date']:not(:placeholder-shown) {
 		@apply before:content-[attr(placeholder)];
-		@apply sm:after:content-[attr(placeholder)] sm:before:hidden;
+		@apply sm:before:hidden sm:after:content-[attr(placeholder)];
 	}
 
 	input[type^='date']::after,
@@ -146,7 +146,7 @@
 	}
 
 	input[type^='date']::before {
-		@apply w-10 mr-1;
+		@apply mr-1 w-10;
 	}
 
 	::-webkit-calendar-picker-indicator {
