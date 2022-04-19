@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { slide, crossfade } from 'svelte/transition';
+	import { quintInOut, quadInOut } from 'svelte/easing';
+
 	import { session } from '$app/stores';
 	import { classes } from '$utils';
 	import type { INavItem } from '$models/interfaces/nav-item.interface';
@@ -23,6 +26,12 @@
 	export let navigation: INavItem[];
 	export let user: IUser;
 
+	const [send, receive] = crossfade({
+		duration: 150,
+		easing: quadInOut
+	});
+	const key = Symbol();
+
 	const currentUser = userData.find((datum) => datum.id === user.id);
 	const gravitarUri = `https://www.gravatar.com/avatar/${currentUser.getEmailMd5Hash()}?s=64`;
 </script>
@@ -35,11 +44,17 @@
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-700 focus:ring-offset-gray-800"
 				>
 					<span class="sr-only">Open main menu</span>
-					{#if !open}
-						<MenuIcon class="h-6 w-6" />
-					{:else}
-						<XIcon class="h-6 w-6" />
-					{/if}
+					<div class="relative h-6 w-6">
+						{#if !open}
+							<div class="absolute inset-0" in:send={{ key }} out:receive={{ key }}>
+								<MenuIcon class="h-6 w-6" />
+							</div>
+						{:else}
+							<div class="absolute inset-0" in:send={{ key }} out:receive={{ key }}>
+								<XIcon class="h-6 w-6" />
+							</div>
+						{/if}
+					</div>
 				</DisclosureButton>
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -167,7 +182,7 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<DisclosurePanel class="sm:hidden">
-		<div class="space-y-1 px-2 pt-2 pb-3">
+		<div transition:slide={{ easing: quintInOut, duration: 350 }} class="space-y-1 px-2 pt-2 pb-3">
 			<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 			{#each navigation as { href, name, current } (name)}
 				<DisclosureButton
