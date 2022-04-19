@@ -49,11 +49,13 @@
 	];
 </script>
 
+<h1 class="text-xl">Svelte Headless UI Starter</h1>
+
 <p>Template designed to make it faster and easier to build libre Svelte apps using Headless UI.</p>
 <p>Get the source code.</p>
 
 <IconButton
-	class="btn btn-primary mr-1 no-underline"
+	class="btn btn-primary mb-2 mr-1 no-underline"
 	icon={CodebergIcon}
 	href="https://codeberg.org/vhs/svelte-headlessui-starter"
 >
