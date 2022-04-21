@@ -41,7 +41,7 @@
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 				<DisclosureButton
-					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-700 focus:ring-offset-gray-800"
+					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-700 focus-visible:ring-offset-gray-800"
 				>
 					<span class="sr-only">Open main menu</span>
 					<div class="relative h-6 w-6">
@@ -79,7 +79,7 @@
 								sveltekit:prefetch
 								class={classes(
 									current ? 'bg-gray-900 text-white' : 'text-gray-300',
-									'relative px-3 py-2 rounded-md text-sm font-medium group focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800'
+									'relative px-3 py-2 rounded-md text-sm font-medium group focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800'
 								)}
 								aria-current={current ? 'page' : undefined}
 							>
@@ -98,7 +98,7 @@
 			>
 				<button
 					type="button"
-					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800"
+					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800"
 				>
 					<span class="sr-only">View notifications</span>
 					<BellIcon class="h-6 w-6" />
@@ -107,7 +107,7 @@
 				<!-- Profile dropdown -->
 				<Menu class="relative ml-3">
 					<MenuButton
-						class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-800"
+						class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800"
 					>
 						<span class="sr-only">Open user menu</span>
 						<img class="h-8 w-8 rounded-full" src={gravitarUri} alt="" />
