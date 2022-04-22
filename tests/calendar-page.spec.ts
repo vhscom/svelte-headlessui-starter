@@ -82,8 +82,7 @@ test.describe('Calendar component', () => {
 		await page.setViewportSize({ width: 375, height: 667 });
 
 		const menuButton = page.locator('section.not-prose [aria-haspopup="true"]');
-		const expanded = menuButton.getAttribute('aria-expanded');
-		expect(await expanded).toBe('false');
+		expect(await menuButton.getAttribute('aria-expanded')).toBe('false');
 
 		await menuButton.click();
 		expect(await menuButton.getAttribute('aria-expanded')).toBe('true');
