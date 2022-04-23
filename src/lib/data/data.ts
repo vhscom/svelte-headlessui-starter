@@ -1,7 +1,7 @@
 import { UserModel } from '$models/classes/user.model';
 import { NavItemModel } from '$models/classes/nav-item.model';
 import { SiteModel } from '$models/classes/site.model';
-import { CalendarEventModel } from '$models/classes/calendar-event.model';
+import { CalendarEventModel, DbCalendarEventModel } from '$models/classes/calendar-event.model';
 
 export const userData: UserModel[] = [
 	{
@@ -50,7 +50,7 @@ export const navigationData: NavItemModel[] = [
 	}
 ].map((value) => new NavItemModel().deserialize(value));
 
-export const dbCalendarData = [
+export const dbCalendarData: DbCalendarEventModel[] = [
 	{
 		id: 1,
 		created_at: '2022-04-14T09:33:57+00:00',
@@ -59,9 +59,10 @@ export const dbCalendarData = [
 		end_date: '2022-04-14',
 		end_time: '18:34:36+08',
 		title: 'Supabase test event',
+		location: 'Test location',
 		url: null
 	}
-];
+].map((value) => new DbCalendarEventModel().deserialize(value));
 
 export const calendarData: CalendarEventModel[] = [
 	{

@@ -82,9 +82,7 @@
 		</button>
 		<div class="hidden items-center sm:flex">
 			<span class="mr-5 ml-2 h-6 w-1 border-l border-gray-300 dark:border-gray-600" />
-			<button type="submit" on:click={handleAddEventClick} class="btn btn-primary">
-				Add event
-			</button>
+			<button on:click={handleAddEventClick} class="btn btn-primary">Add event</button>
 		</div>
 
 		<!-- Calendar dropdown -->

@@ -10,7 +10,7 @@ import {
 import type { AddEventFormData } from '$models/interfaces/calendar-event.interface';
 
 export const post: RequestHandler = async ({ request }) => {
-	if (environment.debug) return { status: 404, body: 'Error debugging enabled.' };
+	if (environment.debug) return { status: 405, body: 'Error debugging enabled.' };
 
 	const json: AddEventFormData = await request.json();
 	let payload: DbCalendarEventModel[];
@@ -19,7 +19,7 @@ export const post: RequestHandler = async ({ request }) => {
 		payload = [prepareCalendarEvent(json)];
 	} catch {
 		return {
-			status: 404,
+			status: 400,
 			body: 'Error transforming events received from client.'
 		};
 	}
