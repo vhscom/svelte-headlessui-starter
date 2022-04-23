@@ -1,6 +1,6 @@
 [![Latest NPM version](https://flat.badgen.net/npm/v/svelte-headlessui-starter)](https://npmjs.com/svelte-headlessui-starter)
 [![Weekly Downloads](https://flat.badgen.net/npm/dw/svelte-headlessui-starter)](https://npmjs.com/svelte-headlessui-starter)
-[![Minimum SvelteKit version](https://flat.badgen.net/badge/SvelteKit/>=1.0.0-next.314/ff3e00)](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md#100-next314)
+[![Minimum SvelteKit version](https://flat.badgen.net/badge/SvelteKit/>=1.0.0-next.320/ff3e00)](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md#100-next320)
 [![AGPL licensed](https://flat.badgen.net/npm/license/svelte-headlessui-starter)](https://codeberg.org/vhs/svelte-headlessui-starter/src/branch/trunk/COPYING)
 
 # Svelte Headless UI Starter

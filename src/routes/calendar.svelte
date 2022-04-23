@@ -10,7 +10,8 @@
 		const events = eventData.map((value) => new CalendarEventModel().deserialize(value));
 
 		return {
-			props: { events }
+			props: { events },
+			cache: { maxage: 300, private: true }
 		};
 	};
 </script>
