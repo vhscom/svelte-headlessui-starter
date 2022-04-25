@@ -8,6 +8,7 @@
 	import LocationMarkerIcon from '~icons/heroicons-outline/location-marker';
 	import CalendarIcon from '~icons/heroicons-outline/calendar';
 	import ClockIcon from '~icons/heroicons-outline/clock';
+	import LinkIcon from '~icons/heroicons-outline/link';
 
 	import type { AddEventFormData } from '$models/interfaces/calendar-event.interface';
 	import { picks, draft } from '../store';
@@ -17,6 +18,7 @@
 
 	$: drafting = $draft instanceof FormData;
 	$: isAllDay = drafting ? $draft.get('allday') === 'on' : true;
+	$: htmlLinkValue = drafting ? $draft.get('link') : '';
 
 	$: isAllDay, (startValue = format($picks.start));
 	$: isAllDay, (endValue = format($picks.end));
@@ -33,6 +35,15 @@
 		draft.set(null);
 		picks.set({ start: null, end: null });
 		dispatch('closeModal');
+	};
+
+	let hiddenHtmlLinkInput: HTMLInputElement;
+	const handleLocationInputEvent = ({ currentTarget }) => {
+		try {
+			hiddenHtmlLinkInput.value = new URL(currentTarget.value).href;
+		} catch {
+			hiddenHtmlLinkInput.value = '';
+		}
 	};
 
 	const handleDateChange = ({ currentTarget }) => {
@@ -79,6 +90,8 @@
 			<label for="event-title" class="sr-only">Title</label>
 			<input
 				required
+				autocomplete="off"
+				maxlength="80"
 				id="event-title"
 				class="flex-1 rounded-md"
 				name="title"
@@ -88,15 +101,29 @@
 			/>
 		</div>
 		<div class="flex flex-row items-center">
-			<LocationMarkerIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
+			{#if hiddenHtmlLinkInput?.value}
+				<LinkIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
+			{:else}
+				<LocationMarkerIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
+			{/if}
 			<label for="event-location" class="sr-only">Location</label>
 			<input
+				autocomplete="on"
+				maxlength="255"
 				id="event-location"
 				class="flex-1 rounded-md"
+				on:input={handleLocationInputEvent}
 				name="location"
 				type="text"
 				placeholder="Location"
 				value={drafting ? $draft.get('location') : ''}
+			/>
+			<input
+				bind:this={hiddenHtmlLinkInput}
+				id="event-link"
+				name="link"
+				type="hidden"
+				value={htmlLinkValue}
 			/>
 		</div>
 		<label class="ml-10">

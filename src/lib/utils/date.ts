@@ -69,6 +69,10 @@ export const prepareCalendarEvent = (input: AddEventFormData): DbCalendarEventMo
 	if (input.location) {
 		event.location = input.location;
 	}
+	if (input.link) {
+		event.html_link = input.link;
+		delete event.location;
+	}
 
 	return event;
 };

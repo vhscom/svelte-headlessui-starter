@@ -60,7 +60,7 @@ export const dbCalendarData: DbCalendarEventModel[] = [
 		end_time: '18:34:36+08',
 		title: 'Supabase test event',
 		location: 'Test location',
-		url: null
+		html_link: null
 	}
 ].map((value) => new DbCalendarEventModel().deserialize(value));
 
