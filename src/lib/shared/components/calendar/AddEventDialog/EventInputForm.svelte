@@ -18,7 +18,7 @@
 
 	$: drafting = $draft instanceof FormData;
 	$: isAllDay = drafting ? $draft.get('allday') === 'on' : true;
-	$: htmlLinkValue = drafting ? $draft.get('link') : '';
+	$: urlValue = drafting ? $draft.get('url') : '';
 
 	$: isAllDay, (startValue = format($picks.start));
 	$: isAllDay, (endValue = format($picks.end));
@@ -37,12 +37,12 @@
 		dispatch('closeModal');
 	};
 
-	let hiddenHtmlLinkInput: HTMLInputElement;
+	let hiddenEventUrlInput: HTMLInputElement;
 	const handleLocationInputEvent = ({ currentTarget }) => {
 		try {
-			hiddenHtmlLinkInput.value = new URL(currentTarget.value).href;
+			hiddenEventUrlInput.value = new URL(currentTarget.value).href;
 		} catch {
-			hiddenHtmlLinkInput.value = '';
+			hiddenEventUrlInput.value = '';
 		}
 	};
 
@@ -101,7 +101,7 @@
 			/>
 		</div>
 		<div class="flex flex-row items-center">
-			{#if hiddenHtmlLinkInput?.value}
+			{#if hiddenEventUrlInput?.value}
 				<LinkIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
 			{:else}
 				<LocationMarkerIcon aria-hidden="true" class="mr-4 h-5 w-5 text-gray-400" />
@@ -119,11 +119,11 @@
 				value={drafting ? $draft.get('location') : ''}
 			/>
 			<input
-				bind:this={hiddenHtmlLinkInput}
-				id="event-link"
-				name="link"
+				bind:this={hiddenEventUrlInput}
+				id="event-url"
+				name="url"
 				type="hidden"
-				value={htmlLinkValue}
+				value={urlValue}
 			/>
 		</div>
 		<label class="ml-10">

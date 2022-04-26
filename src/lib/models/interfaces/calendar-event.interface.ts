@@ -14,7 +14,7 @@ export interface AddEventFormData {
 	allday?: 'on';
 	location: string;
 	title: string;
-	link?: string;
+	url?: string;
 }
 
 export interface ICalendarEvent extends Dictionary {
@@ -35,5 +35,5 @@ export interface IDbCalendarEvent extends Dictionary {
 	end_time: string;
 	title: string;
 	location: string;
-	html_link: string;
+	url: string;
 }

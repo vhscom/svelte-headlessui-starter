@@ -25,7 +25,7 @@ export class DbCalendarEventModel implements IDeserializable<IDbCalendarEvent>, 
 	end_time: string;
 	title: string;
 	location: string;
-	html_link: string;
+	url: string;
 
 	deserialize(input: IDbCalendarEvent): this {
 		Object.assign(this, input);
