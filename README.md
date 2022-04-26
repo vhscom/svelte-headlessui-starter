@@ -31,7 +31,7 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
 - 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
-- ⚗️ [Supabase](https://supabase.com/) integration for dynamic navigation
+- ⚗️ [Supabase](https://supabase.com/) integration for dynamic behaviors
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 - 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
 
@@ -41,6 +41,7 @@ The application structure is as follows:
 
 ```term
 ├── src
+│   ├── db
 │   ├── environment
 │   ├── hooks
 │   ├── lib
@@ -72,9 +73,21 @@ The application structure is as follows:
 └── tests
 ```
 
+## Setup
+
+Copy `.env.example` to `.env` before running the app. The app will run using the defaults provided, however, OAuth configuration is required to access protected routes and Supabase is required for dynamic behaviors such as adding events to the included Calendar component.
+
+### OAuth
+
+To configure authentication using GitHub as an OAuth provider create an OAuth app as described in [Creating an OAuth App](https://docs.github.com/en/enterprise-server@3.4/developers/apps/building-oauth-apps/creating-an-oauth-app) then fill out the `GITHUB_` prefixed items in your `.env` file with those provided by GitHub. OAuth is enabled during development by default although it will not function without an active provider.
+
+### Supabase
+
+To use Supabase create a new project on the [Supabase website](https://supabase.com/) then fill out the `SUPABASE_` prefixed items in your `.env` file with those provided by Supabase. Afterwards run `src/db/setup.sql` from within the Supabase online SQL Editor to configure and seed your database. Supabase is disabled during development by default.
+
 ## Developing
 
-Once you've created a project and installed dependencies with `pnpm install`, start a development server:
+Once you've completed setup and installed dependencies with `pnpm install`, start a development server:
 
 ```bash
 pnpm run dev
@@ -82,6 +95,8 @@ pnpm run dev
 # or start the server and open the app in a new browser tab
 pnpm run dev -- --open
 ```
+
+By default development builds will not utilize Supabase. This behavior can be controlled using the `debug` flag in `environment.dev.ts`. If you have already setup Supabase, set the debug flag to `false` to develop using live data.
 
 ### Making commits
 
@@ -100,6 +115,8 @@ pnpm run build
 ```
 
 You can preview the production build with `npm run preview`.
+
+By default production builds will utilize Supabase. This behavior can be controlled using the `debug` flag in `environment.prod.ts`. If you have not yet setup Supabase or do not wish to use it, set the debug flag to `true` to deploy using mock data.
 
 ## Versioning
 
@@ -120,8 +137,6 @@ To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for pro
 ### Cloudflare
 
 Cloudflare is a little more involved and deployments blocked until [sk-auth/issues/42](https://github.com/Dan6erbond/sk-auth/issues/42) is resolved. The referenced issue has an open pull request in case you wish to fork until the package is updated with a fix.
-
-Start by updating the adapter used in `svelte.config.js` and change the import for `adapter-auto` to `adapter-cloudflare`. The Cloudflare adapter is already included with `adapter-auto`, though you may wish to `pnpm add -D adapter-cloudflare` to be more explicit and then remove `adapter-auto` from the project.
 
 You can get a CI setup running without any additional configuration described in the [Cloudflare Docs for Svelte](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/). Reference the `engines` property in `package.json` for the minimum Node version required to build the project.
 
