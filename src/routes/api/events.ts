@@ -28,8 +28,8 @@ export const post: RequestHandler = async ({ request }) => {
 
 	if (error) {
 		return {
-			status: Number(error.code),
-			body: error.message
+			status: 404,
+			body: 'Error inserting transformed event reported by server.'
 		};
 	}
 
@@ -58,8 +58,8 @@ export const get: RequestHandler = async () => {
 
 	if (error) {
 		return {
-			status: Number(error.code),
-			body: error.message
+			status: 404,
+			body: 'Error selecting events from server.'
 		};
 	}
 
