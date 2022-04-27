@@ -59,6 +59,7 @@
 			{#each eventsForDay as calendarEvent}
 				{@const startTime = dayjs(calendarEvent.start)}
 				{@const eventTitle = calendarEvent.title ?? 'Untitled event'}
+				<EventJsonLd {calendarEvent} />
 				<div class="hidden md:flex">
 					<dt
 						class="flex-1 overflow-hidden overflow-ellipsis whitespace-nowrap font-medium text-gray-900 dark:text-white"
@@ -76,7 +77,6 @@
 					class="mr-0.5 flex rounded-full bg-indigo-300 p-1 sm:mr-1.5 sm:p-1.5 md:hidden"
 				>
 					<time datetime={startTime.format()} class="sr-only">{startTime.format('h:mmA')}</time>
-					<EventJsonLd {calendarEvent} />
 				</div>
 			{/each}
 		</dl>
