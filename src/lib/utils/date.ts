@@ -39,7 +39,15 @@ export const transformCalendarEvent = (input: DbCalendarEventModel): CalendarEve
 			event.end += `T${input.end_time}:00`;
 		}
 	}
+	if (input.url) {
+		event.url = input.url;
+	}
 	event.title = input.title;
+
+	if (input.location) {
+		event.extendedProps = event.extendedProps ?? {};
+		event.extendedProps.location = input.location;
+	}
 
 	return event;
 };

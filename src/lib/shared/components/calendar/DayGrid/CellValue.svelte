@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import dayjs, { type Dayjs } from 'dayjs';
 	import type { CalendarEventModel } from '$models/classes/calendar-event.model';
+	import { EventJsonLd } from '$components/meta';
 	import { classes } from '$utils';
-	import { createEventDispatcher } from 'svelte';
 
 	export let value: Dayjs;
 	export let isToday: boolean;
@@ -55,9 +56,9 @@
 		<dl
 			class="absolute inset-x-0 top-6 flex space-y-1.5 px-2.5 text-xs sm:top-9 sm:-mt-1 md:top-8 md:mt-1 md:flex-col"
 		>
-			{#each eventsForDay as { title, start }}
-				{@const startTime = dayjs(start)}
-				{@const eventTitle = title ? title : 'Untitled event'}
+			{#each eventsForDay as calendarEvent}
+				{@const startTime = dayjs(calendarEvent.start)}
+				{@const eventTitle = calendarEvent.title ?? 'Untitled event'}
 				<div class="hidden md:flex">
 					<dt
 						class="flex-1 overflow-hidden overflow-ellipsis whitespace-nowrap font-medium text-gray-900 dark:text-white"
@@ -75,6 +76,7 @@
 					class="mr-0.5 flex rounded-full bg-indigo-300 p-1 sm:mr-1.5 sm:p-1.5 md:hidden"
 				>
 					<time datetime={startTime.format()} class="sr-only">{startTime.format('h:mmA')}</time>
+					<EventJsonLd {calendarEvent} />
 				</div>
 			{/each}
 		</dl>

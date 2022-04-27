@@ -1,6 +1,6 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.10.5",
+	"version": "0.10.6",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
