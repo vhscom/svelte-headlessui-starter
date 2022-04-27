@@ -9,10 +9,10 @@
 	if (calendarEvent.end) {
 		restProps['endDate'] = dayjs(calendarEvent.end).format();
 	}
-	if (calendarEvent.url || calendarEvent?.extendedProps?.location) {
+	if (calendarEvent.url || calendarEvent.extendedProps?.location) {
 		restProps['location'] = calendarEvent.url ?? calendarEvent.extendedProps.location;
 	}
-	if (calendarEvent?.extendedProps?.description) {
+	if (calendarEvent.extendedProps?.description) {
 		restProps['description'] = calendarEvent.extendedProps.description;
 	}
 
