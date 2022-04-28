@@ -10,7 +10,7 @@
 	};
 
 	const handleClick = (event: MouseEvent) => {
-		event instanceof PointerEvent && event.pointerType && activate(event.target);
+		event instanceof MouseEvent && activate(event.target);
 	};
 
 	const handleKeyup = (event: KeyboardEvent) => {
