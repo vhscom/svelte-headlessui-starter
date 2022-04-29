@@ -24,7 +24,7 @@ export const post: RequestHandler = async ({ request }) => {
 		};
 	}
 
-	const { data: events, error } = await supabase.from('events').insert(payload);
+	const { data: events, error } = await supabase.from('event').insert(payload);
 
 	if (error) {
 		return {
@@ -54,7 +54,7 @@ export const post: RequestHandler = async ({ request }) => {
 export const get: RequestHandler = async () => {
 	if (environment.debug) return { body: JSON.stringify(calendarData) };
 
-	const { data: events, error } = await supabase.from('events').select('*');
+	const { data: events, error } = await supabase.from('event').select('*');
 
 	if (error) {
 		return {
