@@ -7,7 +7,7 @@ import { NavItemModel } from '$models/classes/nav-item.model';
 export const get: RequestHandler = async () => {
 	if (environment.debug) return { body: JSON.stringify(navigationData) };
 
-	const { data: navigation, error } = await supabase.from('navigation').select('*');
+	const { data: navigation, error } = await supabase.from('Navigation').select('*');
 
 	if (error) {
 		return {
