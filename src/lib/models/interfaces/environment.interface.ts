@@ -1,5 +1,6 @@
 import type { AuthConfigType } from '$models/types/auth.type';
 import type { SupabaseConfigType } from '$models/types/supabase.type';
+import type { GraphQLConfigType } from '$models/types/graphql-config.type';
 import type { Dictionary } from '$models/types/dictionary.type';
 
 export enum EnvironmentType {

@@ -45,3 +45,10 @@ create table event (
 	url varchar(255)
 );
 
+-- Configure GraphQL name inflection
+comment on schema public is e'@graphql({"inflect_names": true})';
+
+-- Rebuild the GraphQL schema cache
+select
+	graphql.rebuild_schema ();
+

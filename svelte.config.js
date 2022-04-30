@@ -24,6 +24,7 @@ const config = {
 					$components: resolve('.', './src/lib/shared/components'),
 					$layouts: resolve('.', './src/lib/shared/layouts'),
 					$models: resolve('.', './src/lib/models'),
+					$graphql: resolve('.', './src/lib/graphql'),
 					$data: resolve('.', './src/lib/data'),
 					$core: resolve('.', './src/lib/core'),
 					$utils: resolve('.', './src/lib/utils'),

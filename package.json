@@ -1,6 +1,6 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.11.1",
+	"version": "0.12.0",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
@@ -55,6 +55,8 @@
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",
+		"graphql": "^16.4.0",
+		"graphql-request": "^4.2.0",
 		"postcss": "^8.4.12",
 		"postcss-load-config": "^3.1.4",
 		"prettier": "^2.6.2",

@@ -31,7 +31,7 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 📈 [Basic SEO](https://github.com/oekazuma/svelte-meta-tags) with large social sharing cards
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
 - 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
-- ⚗️ [Supabase](https://supabase.com/) integration for dynamic behaviors
+- ⚗️ [Supabase](https://supabase.com/) integration utilizing GraphQL
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 - 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
 
@@ -48,9 +48,11 @@ The application structure is as follows:
 │   │   ├── core
 │   │   │   └── services
 │   │   │       ├── auth
+│   │   │       ├── graphql
 │   │   │       ├── http
 │   │   │       └── supabase
 │   │   ├── data
+│   │   ├── graphql
 │   │   ├── models
 │   │   │   ├── classes
 │   │   │   ├── interfaces
@@ -84,6 +86,12 @@ To configure authentication using GitHub as an OAuth provider create an OAuth ap
 ### Supabase
 
 To use Supabase create a new project on the [Supabase website](https://supabase.com/) then fill out the `SUPABASE_` prefixed items in your `.env` file with those provided by Supabase. Afterwards run `src/db/setup.sql` from within the Supabase online SQL Editor to configure and seed your database. Supabase is disabled during development by default.
+
+#### GraphQL
+
+Supabase can be used with HTTP and GraphQL via the `pg_graphql` extension which is enabled by default for all databases created after Mar 28, 2022. This starter utilizes a simple GraphQL client to access some Supabase data and, as a result, requires `pg_graphql` to be enabled in order to function when Supabase is used. The `setup.sql` file contains the necessary configuration for GraphQL and no additional steps are required.
+
+Visit [Activate and Use Supabase GraphQL](https://vhs.codeberg.page/post/activate-use-supabase-graphql/) to understand how it works.
 
 ## Developing
 

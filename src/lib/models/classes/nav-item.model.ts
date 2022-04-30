@@ -10,6 +10,11 @@ export class NavItemModel implements IDeserializable<INavItem>, INavItem {
 	public current: boolean;
 	public weight: number;
 
+	setCurrent(currentUrl: string): this {
+		this.current = currentUrl === this.href;
+		return this;
+	}
+
 	deserialize(input: INavItem): this {
 		Object.assign(this, input);
 		return this;

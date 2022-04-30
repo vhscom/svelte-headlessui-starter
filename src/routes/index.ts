@@ -1,9 +1,9 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { navigationData } from '$data';
-import { formatNavigation } from '$utils';
+import { getOrderedNavigation } from '$utils/endpoint';
 
-export const get: RequestHandler = async ({ request }) => {
-	const [firstNavItem] = formatNavigation(navigationData, request.url);
+export const get: RequestHandler = async () => {
+	const orderedNavigation = await getOrderedNavigation();
+	const [firstNavItem] = orderedNavigation;
 
 	return {
 		headers: { Location: firstNavItem.href },
