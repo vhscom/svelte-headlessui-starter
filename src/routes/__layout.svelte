@@ -31,8 +31,10 @@
 	export let user: UserModel;
 
 	$: navigation = navigation.map((navItem) => navItem.setCurrent($page.url.pathname));
+	$: currentNavItem = navigation.find((navItem) => navItem.current);
+	$: pageTitle = currentNavItem?.name;
 </script>
 
-<DefaultLayout {navigation} {user}>
+<DefaultLayout {navigation} {user} {pageTitle}>
 	<slot />
 </DefaultLayout>

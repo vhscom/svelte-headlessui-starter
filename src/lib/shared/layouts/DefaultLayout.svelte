@@ -7,10 +7,7 @@
 
 	export let navigation: INavItem[];
 	export let user: IUser;
-	export let pageTitle = '';
-
-	$: currentNavItem = navigation.find((navItem) => navItem.current);
-	$: pageTitle = pageTitle ?? currentNavItem?.name;
+	export let pageTitle: string | null;
 </script>
 
 {#key pageTitle}
