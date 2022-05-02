@@ -32,6 +32,7 @@ View the [online demo](https://svelte-headlessui-starter.vercel.app) to see what
 - 🚀 [Vercel](https://vercel.com/) deployments functional out of the box
 - 🔐 [OAuth](https://www.oauth.com/) via GitHub, extendible to other providers
 - ⚗️ [Supabase](https://supabase.com/) integration utilizing GraphQL
+- 🦄 [GraphQL](https://graphql.org/) language server via remote schema
 - 👷 [Gravitar](https://gravatar.com/) support for non-logged in users
 - 📄 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)-licensed free (as in freedom) software
 
@@ -89,9 +90,11 @@ To use Supabase create a new project on the [Supabase website](https://supabase.
 
 #### GraphQL
 
-Supabase can be used with HTTP and GraphQL via the `pg_graphql` extension which is enabled by default for all databases created after Mar 28, 2022. This starter utilizes a simple GraphQL client to access some Supabase data and, as a result, requires `pg_graphql` to be enabled in order to function when Supabase is used. The `setup.sql` file contains the necessary configuration for GraphQL and no additional steps are required.
+Supabase can be used with REST and GraphQL via the `pg_graphql` extension which is enabled by default for projects created after Mar 28, 2022. This starter utilizes a simple GraphQL client to access some Supabase data and, as a result, requires `pg_graphql` to be enabled in order to function when Supabase is used. The `setup.sql` file contains the necessary configuration for GraphQL and no additional steps are required.
 
 Visit [Activate and Use Supabase GraphQL](https://vhs.codeberg.page/post/activate-use-supabase-graphql/) to understand how it works.
+
+GraphQL language server features such as query completions will begin to function automatically once the `.env` file is configured. See `.graphqlrc.yml` for setup. Using this approach you do not need to duplicate server schema in your app. Assumes you're using an editor plug-in which understands how to read [graphql-config](https://graphql-config.com).
 
 ## Developing
 

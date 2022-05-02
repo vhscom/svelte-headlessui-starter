@@ -1,0 +1,5 @@
+documents: 'src/**/*.{graphql,js,ts}'
+schema:
+  - '${SUPABASE_PROJECT_URL}/graphql/v1':
+      headers:
+        apiKey: ${SUPABASE_PUBLIC_ANON_KEY}
