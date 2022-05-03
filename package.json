@@ -1,6 +1,6 @@
 {
 	"name": "svelte-headlessui-starter",
-	"version": "0.12.2",
+	"version": "0.12.3",
 	"private": true,
 	"description": "Launch your next Svelte app using Headless UI.",
 	"author": "VHS <vhsdev@tutanota.com> (https://vhs.codeberg.page)",
@@ -18,7 +18,7 @@
 		"url": "https://codeberg.org/vhs/svelte-headlessui-starter.git"
 	},
 	"engines": {
-		"node": ">=14"
+		"node": ">=14.13"
 	},
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -34,8 +34,8 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.22.0",
-		"@fontsource/inter": "^4.5.7",
-		"@iconify/json": "^2.1.31",
+		"@fontsource/inter": "^4.5.10",
+		"@iconify/json": "^2.1.35",
 		"@playwright/test": "^1.21.1",
 		"@rgossiaux/svelte-headlessui": "^1.0.0-beta.12",
 		"@supabase/supabase-js": "^1.35.2",
@@ -44,10 +44,10 @@
 		"@tailwindcss/forms": "^0.5.0",
 		"@tailwindcss/typography": "^0.5.2",
 		"@types/cookie": "^0.5.1",
-		"@types/node": "^17.0.25",
-		"@typescript-eslint/eslint-plugin": "^5.20.0",
-		"@typescript-eslint/parser": "^5.20.0",
-		"autoprefixer": "^10.4.4",
+		"@types/node": "^17.0.31",
+		"@typescript-eslint/eslint-plugin": "^5.22.0",
+		"@typescript-eslint/parser": "^5.22.0",
+		"autoprefixer": "^10.4.7",
 		"cookie": "^0.5.0",
 		"cssnano": "^5.1.7",
 		"dayjs": "^1.11.1",
@@ -57,12 +57,12 @@
 		"eslint-plugin-svelte3": "^3.4.1",
 		"graphql": "^16.4.0",
 		"graphql-request": "^4.2.0",
-		"postcss": "^8.4.12",
+		"postcss": "^8.4.13",
 		"postcss-load-config": "^3.1.4",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"prettier-plugin-tailwindcss": "^0.1.10",
-		"svelte": "^3.47.0",
+		"svelte": "^3.48.0",
 		"svelte-check": "^2.7.0",
 		"svelte-meta-tags": "^2.5.1",
 		"svelte-preprocess": "^4.10.6",
@@ -70,8 +70,8 @@
 		"tailwindcss": "^3.0.24",
 		"ts-md5": "^1.2.11",
 		"tslib": "^2.4.0",
-		"typescript": "^4.6.3",
-		"unplugin-icons": "~0.14.1"
+		"typescript": "^4.6.4",
+		"unplugin-icons": "~0.14.3"
 	},
 	"peerDependencies": {
 		"vercel": "^24.1.0",
