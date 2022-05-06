@@ -139,20 +139,21 @@ To publish a new version run `pnpm changeset publish` to generate a `CHANGELOG`,
 
 ## Deploying
 
-Supported deployment environments include Vercel, Cloudflare and Netlify. Other environments may be included in the future. See [adapter-auto](https://www.npmjs.com/package/@sveltejs/adapter-auto) for most current list of supported environments. Instructions for Vercel and Cloudflare included below.
+Supported deployment environments include Vercel, Cloudflare and Netlify. Other environments may be supported in the future. See [adapter-auto](https://www.npmjs.com/package/@sveltejs/adapter-auto) for list of automatically supported environments.
+
+Note that although Cloudflare uses Node to build the project its SSR functionality is performed in Web Workers. As a result, code that requires Node explicitly such as `dotenv` is forbidden. Reference the `engines` property in `package.json` for the minimum Node version required to build the project regardless of deployment target used. 
 
 ### Vercel
 
 To deploy your app to Vercel run `vercel` for testing or `vercel --prod` for production. Assumes you've signed-up for and authenticated with Vercel from the [Vercel CLI](https://vercel.com/cli). No additional configuration is required. If you wish to create a Continuous Integration (CI) setup with a git repo connected to Vercel, consult the Vercel docs.
 
-### Cloudflare
+### Cloudflare Pages
 
-Cloudflare is a little more involved and deployments blocked until [sk-auth/issues/42](https://github.com/Dan6erbond/sk-auth/issues/42) is resolved. The referenced issue has an open pull request in case you wish to fork until the package is updated with a fix.
+You can get a CI setup running without any additional configuration as described in the [Cloudflare Docs for Svelte](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/). See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) and [here](https://github.com/sveltejs/kit/issues/2966) for CLI-based deployments, which are a bit more involved.
 
-You can get a CI setup running without any additional configuration described in the [Cloudflare Docs for Svelte](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/). Reference the `engines` property in `package.json` for the minimum Node version required to build the project.
+#### Error 1102: Worker exceeded resource limits
 
-For CLI-based deployments use the `wrangler publish` command. Assumes you've signed-up for and logged into your Cloudflare account using [Wrangler CLI](https://developers.cloudflare.com/workers/cli-wrangler/install-update/), and that a `wrangler.toml` has been created within the project. See [Wrangler Configuration](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) and [here](https://github.com/sveltejs/kit/issues/2966) for additional help.
-
+Once you've deployed to Cloudflare Pages, if you see the error indicated that means you've gone over the CPU budget during server-side rendering. Cloudflare set a 50ms budget for Functions (Workers) during the beta. Enable the `debug` flag in `environment.prod.ts` and try again.
 ## Rights
 
 Svelte Headless UI Starter - Launch your next Svelte app using Headless UI.<br>
