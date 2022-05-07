@@ -141,7 +141,7 @@ To publish a new version run `pnpm changeset publish` to generate a `CHANGELOG`,
 
 Supported deployment environments include Vercel, Cloudflare and Netlify. Other environments may be supported in the future. See [adapter-auto](https://www.npmjs.com/package/@sveltejs/adapter-auto) for list of automatically supported environments.
 
-Note that although Cloudflare uses Node to build the project its SSR functionality is performed in Web Workers. As a result, code that requires Node explicitly such as `dotenv` is forbidden. Reference the `engines` property in `package.json` for the minimum Node version required to build the project regardless of deployment target used. 
+Note that although Cloudflare uses Node to build the project its SSR functionality is performed in Web Workers. As a result, code that requires Node explicitly such as `dotenv` is forbidden. Reference the `engines` property in `package.json` for the minimum Node version required to build the project regardless of deployment target used.
 
 ### Vercel
 
