@@ -1,5 +1,5 @@
-import { Providers, SvelteKitAuth } from 'sveltekit-oauth';
-import { GitHubOAuth2Provider } from 'sveltekit-oauth/providers';
+import { Providers, SvelteKitAuth } from 'sk-auth';
+import { GitHubOAuth2Provider } from 'sk-auth/providers';
 import { environment } from '$environment';
 import { EnvironmentType } from '$models/interfaces/environment.interface';
 
