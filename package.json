@@ -17,9 +17,6 @@
 		"type": "git",
 		"url": "https://codeberg.org/vhs/svelte-headlessui-starter.git"
 	},
-	"engines": {
-		"node": ">=14.13"
-	},
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -73,18 +70,6 @@
 		"tslib": "^2.4.0",
 		"typescript": "^4.6.4",
 		"unplugin-icons": "~0.14.3"
-	},
-	"peerDependencies": {
-		"vercel": "^24.1.0",
-		"wrangler": "beta"
-	},
-	"peerDependenciesMeta": {
-		"wrangler": {
-			"optional": true
-		},
-		"vercel": {
-			"optional": true
-		}
 	},
 	"type": "module"
 }
