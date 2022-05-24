@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import icons from 'unplugin-icons/vite';
