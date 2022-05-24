@@ -38,7 +38,7 @@
 		"@rgossiaux/svelte-headlessui": "^1.0.1",
 		"@supabase/supabase-js": "^1.35.3",
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/kit": "1.0.0-next.336",
+		"@sveltejs/kit": "1.0.0-next.339",
 		"@tailwindcss/forms": "^0.5.2",
 		"@tailwindcss/typography": "^0.5.2",
 		"@types/cookie": "^0.5.1",
