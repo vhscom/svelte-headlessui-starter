@@ -8,33 +8,9 @@
 		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"lib": ["es2020", "DOM"],
-		"moduleResolution": "node",
-		"module": "es2020",
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
-		"target": "es2020",
-
-		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
-			"$components": ["src/lib/shared/components/index.ts"],
-			"$components/*": ["src/lib/shared/components/*"],
-			"$core": ["src/lib/core"],
-			"$core/*": ["src/lib/core/*"],
-			"$layouts": ["src/lib/shared/layouts/index.ts"],
-			"$layouts/*": ["src/lib/shared/layouts/*"],
-			"$data": ["src/lib/data/index.ts"],
-			"$data/*": ["src/lib/data/*"],
-			"$models": ["src/lib/models/index.ts"],
-			"$models/*": ["src/lib/models/*"],
-			"$graphql": ["src/lib/graphql/index.ts"],
-			"$graphql/*": ["src/lib/graphql/*"],
-			"$utils": ["src/lib/utils/index.ts"],
-			"$utils/*": ["src/lib/utils/*"],
-			"$environment": ["src/environment/index.ts"]
-		}
+		"strict": true
 	}
 }

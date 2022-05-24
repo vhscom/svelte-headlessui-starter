@@ -18,19 +18,17 @@ const config = {
 		adapter: adapter(),
 		files: { serviceWorker: 'src/sw' },
 		serviceWorker: { register: true },
+		alias: {
+			$components: 'src/lib/shared/components',
+			$core: 'src/lib/core',
+			$data: 'src/lib/data',
+			$environment: 'src/environment',
+			$graphql: 'src/lib/graphql',
+			$layouts: 'src/lib/shared/layouts',
+			$models: 'src/lib/models',
+			$utils: 'src/lib/utils'
+		},
 		vite: {
-			resolve: {
-				alias: {
-					$components: resolve('.', './src/lib/shared/components'),
-					$layouts: resolve('.', './src/lib/shared/layouts'),
-					$models: resolve('.', './src/lib/models'),
-					$graphql: resolve('.', './src/lib/graphql'),
-					$data: resolve('.', './src/lib/data'),
-					$core: resolve('.', './src/lib/core'),
-					$utils: resolve('.', './src/lib/utils'),
-					$environment: resolve('.', './src/environment')
-				}
-			},
 			plugins: [
 				icons({
 					compiler: 'svelte',

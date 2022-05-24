@@ -11,7 +11,7 @@ specifiers:
   '@rgossiaux/svelte-headlessui': ^1.0.1
   '@supabase/supabase-js': ^1.35.3
   '@sveltejs/adapter-auto': next
-  '@sveltejs/kit': 1.0.0-next.339
+  '@sveltejs/kit': 1.0.0-next.341
   '@tailwindcss/forms': ^0.5.2
   '@tailwindcss/typography': ^0.5.2
   '@types/cookie': ^0.5.1
@@ -52,7 +52,7 @@ devDependencies:
   '@rgossiaux/svelte-headlessui': 1.0.1_svelte@3.48.0
   '@supabase/supabase-js': 1.35.3
   '@sveltejs/adapter-auto': 1.0.0-next.45
-  '@sveltejs/kit': 1.0.0-next.339_svelte@3.48.0
+  '@sveltejs/kit': 1.0.0-next.341_svelte@3.48.0
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.0.24
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
   '@types/cookie': 0.5.1
@@ -537,8 +537,8 @@ packages:
       esbuild: 0.14.39
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.339_svelte@3.48.0:
-    resolution: {integrity: sha512-IrNkIz3+rK0CD/7teAHvzc+8vGLgYXVa2d/NB9xtkyHcgIVOpqSBJ4+MATCpoxpsbVQatNnphN///n0cM4VLKA==}
+  /@sveltejs/kit/1.0.0-next.341_svelte@3.48.0:
+    resolution: {integrity: sha512-WxVallEl6vm07e0nfJWfET5fUADcgRuJz28NkaTAwVoZrVXFPxobdSw9I6wgDp51C3MvWVCUQLfk1W23iC0RXA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
