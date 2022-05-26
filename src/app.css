@@ -16,7 +16,7 @@
 		}
 
 		&:disabled {
-			@apply opacity-50 cursor-wait;
+			@apply cursor-wait opacity-50;
 		}
 
 		svg {

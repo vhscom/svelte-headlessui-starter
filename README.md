@@ -154,6 +154,7 @@ You can get a CI setup running without any additional configuration as described
 #### Error 1102: Worker exceeded resource limits
 
 Once you've deployed to Cloudflare Pages, if you see the error indicated that means you've gone over the CPU budget during server-side rendering. Cloudflare set a 50ms budget for Functions (Workers) during the beta. Enable the `debug` flag in `environment.prod.ts` and try again.
+
 ## Rights
 
 Svelte Headless UI Starter - Launch your next Svelte app using Headless UI.<br>
