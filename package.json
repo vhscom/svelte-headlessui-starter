@@ -35,7 +35,7 @@
 		"@fontsource/inter": "^4.5.10",
 		"@iconify/json": "^2.1.47",
 		"@playwright/test": "^1.22.1",
-		"@rgossiaux/svelte-headlessui": "^1.0.1",
+		"@rgossiaux/svelte-headlessui": "^1.0.2",
 		"@supabase/supabase-js": "^1.35.3",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.0.0-next.341",

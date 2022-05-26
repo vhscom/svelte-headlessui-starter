@@ -128,6 +128,7 @@
 							<!-- Active: "bg-gray-100", Not Active: "" -->
 							<MenuItem
 								href="/account/profile"
+								sveltekit:prefetch
 								class={({ active }) =>
 									classes(
 										active ? 'bg-gray-100 dark:bg-gray-800' : '',
@@ -138,6 +139,7 @@
 							</MenuItem>
 							<MenuItem
 								href="/account/settings"
+								sveltekit:prefetch
 								class={({ active }) =>
 									classes(
 										active ? 'bg-gray-100 dark:bg-gray-800' : '',
@@ -149,6 +151,7 @@
 							{#if $session?.user}
 								<MenuItem
 									href="/account/signout"
+									sveltekit:prefetch
 									class={({ active }) =>
 										classes(
 											active ? 'bg-gray-100 dark:bg-gray-800' : '',
@@ -160,6 +163,7 @@
 							{:else}
 								<MenuItem
 									href="/account/signin"
+									sveltekit:prefetch
 									class={({ active }) =>
 										classes(
 											active ? 'bg-gray-100 dark:bg-gray-800' : '',
@@ -184,6 +188,7 @@
 				<DisclosureButton
 					as="a"
 					{href}
+					sveltekit:prefetch
 					class={classes(
 						current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
 						'block px-3 py-2 rounded-md text-base font-medium'
