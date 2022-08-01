@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { getOrderedNavigation } from '$utils/endpoint';
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const orderedNavigation = await getOrderedNavigation();
 	const [firstNavItem] = orderedNavigation;
 

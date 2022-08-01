@@ -51,7 +51,7 @@ export const post: RequestHandler = async ({ request }) => {
 	};
 };
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	if (environment.debug) return { body: JSON.stringify(calendarData) };
 
 	const { data: events, error } = await supabase.from('event').select('*');

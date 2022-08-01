@@ -1,7 +1,7 @@
 import cookie from 'cookie';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = async ({ request }) => {
+export const GET: RequestHandler = async ({ request }) => {
 	const headers = { Location: '/' };
 
 	// Workaround signOut issue in sk-auth/client. Check for auth cookie

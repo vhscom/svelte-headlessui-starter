@@ -1,7 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import icons from 'unplugin-icons/vite';
-import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -26,18 +24,6 @@ const config = {
 			$layouts: 'src/lib/shared/layouts',
 			$models: 'src/lib/models',
 			$utils: 'src/lib/utils'
-		},
-		vite: {
-			plugins: [
-				icons({
-					compiler: 'svelte',
-					customCollections: {
-						custom: FileSystemIconLoader('./static/assets/icons', (svg) =>
-							svg.replace(/^<svg /, '<svg fill="currentColor" ')
-						)
-					}
-				})
-			]
 		}
 	}
 };
